@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<tryton>
+    <data>
+
+        <record model="res.group" id="group_employee_leave_admin">
+            <field name="name">Employee Leave Administration</field>
+        </record>
+        <record model="res.user-res.group" id="user_admin_group_employee_leave_admin">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_employee_leave_admin"/>
+        </record>
+        <record model="res.user-res.group" id="user_trigger_group_employee_leave_admin">
+            <field name="user" ref="res.user_trigger"/>
+            <field name="group" ref="group_employee_leave_admin"/>
+        </record>
+        <record model="res.group" id="group_employee_leave">
+            <field name="name">Employee_leave</field>
+        </record>
+        <record model="res.user-res.group" id="user_admin_group_employee_leave">
+            <field name="user" ref="res.user_admin"/>
+            <field name="group" ref="group_employee_leave"/>
+        </record>
+        <record model="res.user-res.group" id="user_trigger_group_employee_leave">
+            <field name="user" ref="res.user_trigger"/>
+            <field name="group" ref="group_employee_leave"/>
+        </record>
+        <record model="ir.ui.view" id="employee_leave_view_form">
+            <field name="model">employee.leave</field>
+            <field name="type">form</field>
+            <field name="name">employee_leave_form</field>
+        </record>
+        <record model="ir.ui.view" id="employee_leave_view_list">
+            <field name="model">employee.leave</field>
+            <field name="type">tree</field>
+            <field name="name">employee_leave_list</field>
+        </record>
+        <record model="ir.action.act_window" id="act_employee_leave">
+            <field name="name">Employee Leave</field>
+            <field name="res_model">employee.leave</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_employee_leave_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="employee_leave_view_list"/>
+            <field name="act_window" ref="act_employee_leave"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_employee_leave_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="employee_leave_view_form"/>
+            <field name="act_window" ref="act_employee_leave"/>
+        </record>
+        <record model="ir.model.access" id="access_employee_leave">
+            <field name="model" search="[('model', '=', 'employee.leave')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_employee_leave_admin">
+            <field name="model" search="[('model', '=', 'employee.leave')]"/>
+            <field name="group" ref="group_employee_leave_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.ui.view" id="employee_leave_entitlement_view_form">
+            <field name="model">employee.leave.entitlement</field>
+            <field name="type">form</field>
+            <field name="name">employee_leave_entitlement_form</field>
+        </record>
+        <record model="ir.ui.view" id="employee_leave_entitlement_view_list">
+            <field name="model">employee.leave.entitlement</field>
+            <field name="type">tree</field>
+            <field name="name">employee_leave_entitlement_list</field>
+        </record>
+        <record model="ir.action.act_window" id="act_employee_leave_entitlement">
+            <field name="name">Employee Entitlement</field>
+            <field name="res_model">employee.leave.entitlement</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_employee_leave_entitlement_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="employee_leave_entitlement_view_list"/>
+            <field name="act_window" ref="act_employee_leave_entitlement"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_employee_leave_entitlement_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="employee_leave_entitlement_view_form"/>
+            <field name="act_window" ref="act_employee_leave_entitlement"/>
+        </record>
+        <record model="ir.model.access" id="access_employee_leave_entitlement">
+            <field name="model" search="[('model', '=', 'employee.leave.entitlement')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_employee_leave_entitlement_admin">
+            <field name="model" search="[('model', '=', 'employee.leave.entitlement')]"/>
+            <field name="group" ref="group_employee_leave_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.ui.view" id="employee_leave_payment_view_form">
+            <field name="model">employee.leave.payment</field>
+            <field name="type">form</field>
+            <field name="name">employee_leave_payment_form</field>
+        </record>
+        <record model="ir.ui.view" id="employee_leave_payment_view_list">
+            <field name="model">employee.leave.payment</field>
+            <field name="type">tree</field>
+            <field name="name">employee_leave_payment_list</field>
+        </record>
+        <record model="ir.action.act_window" id="act_employee_leave_payment">
+            <field name="name">Employee Leave Payment</field>
+            <field name="res_model">employee.leave.payment</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_employee_leave_payment_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="employee_leave_payment_view_list"/>
+            <field name="act_window" ref="act_employee_leave_payment"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_employee_leave_payment_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="employee_leave_payment_view_form"/>
+            <field name="act_window" ref="act_employee_leave_payment"/>
+        </record>
+        <record model="ir.model.access" id="access_employee_leave_payment">
+            <field name="model" search="[('model', '=', 'employee.leave.payment')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_employee_leave_payment_admin">
+            <field name="model" search="[('model', '=', 'employee.leave.payment')]"/>
+            <field name="group" ref="group_employee_leave_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.ui.view" id="employee_leave_period_view_form">
+            <field name="model">employee.leave.period</field>
+            <field name="type">form</field>
+            <field name="name">employee_leave_period_form</field>
+        </record>
+        <record model="ir.ui.view" id="employee_leave_period_view_list">
+            <field name="model">employee.leave.period</field>
+            <field name="type">tree</field>
+            <field name="name">employee_leave_period_list</field>
+        </record>
+        <record model="ir.action.act_window" id="act_employee_leave_period">
+            <field name="name">Employee Leave Period</field>
+            <field name="res_model">employee.leave.period</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_employee_leave_period_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="employee_leave_period_view_list"/>
+            <field name="act_window" ref="act_employee_leave_period"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_employee_leave_period_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="employee_leave_period_view_form"/>
+            <field name="act_window" ref="act_employee_leave_period"/>
+        </record>
+        <record model="ir.model.access" id="access_employee_leave_period">
+            <field name="model" search="[('model', '=', 'employee.leave.period')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_employee_leave_period_admin">
+            <field name="model" search="[('model', '=', 'employee.leave.period')]"/>
+            <field name="group" ref="group_employee_leave_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.ui.view" id="employee_leave_summary_view_list">
+            <field name="model">employee.leave.summary</field>
+            <field name="type">tree</field>
+            <field name="name">employee_leave_summary_list</field>
+        </record>
+        <record model="ir.action.act_window" id="act_employee_leave_summary">
+            <field name="name">Employee Leave Summary</field>
+            <field name="res_model">employee.leave.summary</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_employee_leave_summary_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="employee_leave_summary_view_list"/>
+            <field name="act_window" ref="act_employee_leave_summary"/>
+        </record>
+        <record model="ir.model.access" id="access_employee_leave_summary">
+            <field name="model" search="[('model', '=', 'employee.leave.summary')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_employee_leave_summary_admin">
+            <field name="model" search="[('model', '=', 'employee.leave.summary')]"/>
+            <field name="group" ref="group_employee_leave_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.ui.view" id="employee_leave_type_view_form">
+            <field name="model">employee.leave.type</field>
+            <field name="type">form</field>
+            <field name="name">employee_leave_type_form</field>
+        </record>
+        <record model="ir.ui.view" id="employee_leave_type_view_list">
+            <field name="model">employee.leave.type</field>
+            <field name="type">tree</field>
+            <field name="name">employee_leave_type_list</field>
+        </record>
+        <record model="ir.action.act_window" id="act_employee_leave_type">
+            <field name="name">Employee Leave Type</field>
+            <field name="res_model">employee.leave.type</field>
+        </record>
+        <record model="ir.action.act_window.view" id="act_employee_leave_type_view1">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="employee_leave_type_view_list"/>
+            <field name="act_window" ref="act_employee_leave_type"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_employee_leave_type_view2">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="employee_leave_type_view_form"/>
+            <field name="act_window" ref="act_employee_leave_type"/>
+        </record>
+        <record model="ir.model.access" id="access_employee_leave_type">
+            <field name="model" search="[('model', '=', 'employee.leave.type')]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_delete" eval="False"/>
+        </record>
+        <record model="ir.model.access" id="access_employee_leave_type_admin">
+            <field name="model" search="[('model', '=', 'employee.leave.type')]"/>
+            <field name="group" ref="group_employee_leave_admin"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_delete" eval="True"/>
+        </record>
+        <record model="ir.ui.view" id="employee_view_form">
+            <field name="model">company.employee</field>
+            <field name="type">form</field>
+            <field name="inherit" ref="company.employee_view_form"/>
+            <field name="name">employee_form</field>
+        </record>
+        <!-- Menus -->
+        <menuitem id="menu_employee_leave" name="Employee Leaves" sequence="1" />
+        <menuitem id="menu_config" name="Configuration" sequence="10"
+            parent="menu_employee_leave"/>
+        <menuitem id="menu_admin" name="Administration" sequence="20"
+            parent="menu_employee_leave"/>
+
+          <record model="ir.ui.menu-res.group" id="menu_employee_leave_group_employee_leave">
+            <field name="menu" ref="menu_employee_leave"/>
+            <field name="group" ref="group_employee_leave"/>
+          </record>
+
+          <record model="ir.ui.menu-res.group" id="menu_admin_group_employee_leave_admin">
+            <field name="menu" ref="menu_admin"/>
+            <field name="group" ref="group_employee_leave_admin"/>
+          </record>
+          <record model="ir.ui.menu-res.group" id="menu_config_group_employee_leave_admin">
+            <field name="menu" ref="menu_config"/>
+            <field name="group" ref="group_employee_leave_admin"/>
+          </record>
+
+        <menuitem action="act_employee_leave_period"
+            id="menu_employee_leave_period" parent="menu_config"
+            sequence="1" name="Leave Periods"/>
+        <menuitem action="act_employee_leave_type"
+            id="menu_employee_leave_type" parent="menu_config"
+            sequence="1" name="Leave Types"/>
+
+        <menuitem action="act_employee_leave_entitlement"
+            id="menu_employee_leave_entitlement" parent="menu_admin"
+            sequence="1" name="Entitlements"/>
+        <menuitem action="act_employee_leave_payment"
+            id="menu_employee_leave_payment" parent="menu_admin"
+            sequence="1" name="Leave Payments"/>
+        <menuitem action="act_employee_leave_summary"
+            id="menu_employee_leave_summary" parent="menu_admin"
+            sequence="1" name="Leave Summaries"/>
+
+    <menuitem action="act_employee_leave" id="menu_employee_leave_leave"
+            parent="menu_employee_leave" sequence="50" name="Leaves"/>
+
+    </data>
+</tryton>

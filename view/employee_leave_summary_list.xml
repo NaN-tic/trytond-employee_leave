@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!-- The COPYRIGHT file at the top level of this repository contains the full
+     copyright notices and license terms. -->
+<tree string="Employee Leave Summary">
+    <field name="employee"/>
+    <field name="period"/>
+    <field name="type"/>
+    <field name="hours"/>
+    <field name="paid"/>
+    <field name="done"/>
+    <field name="scheduled"/>
+    <field name="pending_approval"/>
+    <field name="available"/>
+</tree>
