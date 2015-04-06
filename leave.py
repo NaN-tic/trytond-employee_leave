@@ -30,10 +30,10 @@ class Leave(ModelSQL, ModelView, Workflow):
     employee = fields.Many2One('company.employee', 'Employee', required=True)
     period = fields.Many2One('employee.leave.period', 'Period', required=True)
     type = fields.Many2One('employee.leave.type', 'Type', required=True)
-    date = fields.Date('Date')
-    hours = fields.Numeric('Hours')
-    start = fields.DateTime('Start')
-    end = fields.DateTime('End')
+    date = fields.Date('Date', required=True)
+    hours = fields.Numeric('Hours', required=True)
+    start = fields.Date('Start', required=True)
+    end = fields.Date('End', required=True)
     comment = fields.Text('Comment')
     state = fields.Selection([
             ('pending', 'Pending'),
@@ -53,6 +53,30 @@ class Leave(ModelSQL, ModelView, Workflow):
     def default_state():
         return 'pending'
 
+    @staticmethod
+    def get_leave_hours(employee, type_, start, end):
+        # Search on 'employee.leave' and find the number of hours that fit
+        # inside this payslip
+        Leave = Pool().get('employee.leave')
+        domain = [
+            ('state', '=', 'done'),
+            ('start', '<=', end),
+            ('end', '>=', start),
+            ]
+        if employee:
+            domain.append(('employee', '=', employee.id))
+        if type_:
+            domain.append(('type', '=', type_.id))
+        leaves = Leave.search(domain)
+        count = Decimal('0.0')
+        for leave in leaves:
+            days = (leave.end - leave.start).days + 1
+            hours_per_day  = leave.hours / Decimal(days)
+            s = max(leave.start, start)
+            e = min(leave.end, end)
+            days = (e - s).days + 1
+            count += hours_per_day * days
+        return count
 
 class Entitlement(ModelSQL, ModelView):
     'Employee Entitlement'
