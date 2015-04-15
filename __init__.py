@@ -6,8 +6,8 @@ from .leave import *
 def register():
     Pool.register(
         LeaveType,
-        Leave,
         LeavePeriod,
+        Leave,
         Entitlement,
         LeavePayment,
         Employee,

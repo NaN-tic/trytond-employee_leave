@@ -4,7 +4,7 @@ from sql.aggregate import Sum
 from sql import Column, Literal
 from decimal import Decimal
 
-__all__ = ['LeaveType', 'Leave', 'LeavePeriod', 'Entitlement', 'LeavePayment',
+__all__ = ['LeaveType', 'LeavePeriod', 'Leave', 'Entitlement', 'LeavePayment',
     'Employee', 'LeaveSummary']
 __metaclass__ = PoolMeta
 
