@@ -70,15 +70,15 @@ Create employee::
     >>> employee.company = company
     >>> employee.save()
 
-Create leave period:
+Create leave period::
 
     >>> Period = Model.get('employee.leave.period')
     >>> period = Period(name='%s' % today.year)
-    >>> period.start_date = today + relativedelta(month=1, day=1)
-    >>> period.end_date = today + relativedelta(month=12, day=31)
+    >>> period.start = today + relativedelta(month=1, day=1)
+    >>> period.end = today + relativedelta(month=12, day=31)
     >>> period.save()
 
-Create leave types:
+Create leave types::
 
     >>> Type = Model.get('employee.leave.type')
     >>> holidays = Type(name='Holidays')
@@ -86,58 +86,68 @@ Create leave types:
     >>> other = Type(name='Other')
     >>> other.save()
 
-Create entitlements:
+Create entitlements::
 
     >>> Entitlement = Model.get('employee.leave.entitlement')
     >>> entitlement = Entitlement()
     >>> entitlement.employee = employee
     >>> entitlement.period = period
     >>> entitlement.type = holidays
-    >>> entitlement.hours = 184
+    >>> entitlement.hours = Decimal(184)
     >>> entitlement.save()
 
-Create payments:
+Create payments::
 
     >>> Payment = Model.get('employee.leave.payment')
     >>> payment = Payment()
     >>> payment.employee = employee
     >>> payment.period = period
     >>> payment.type = holidays
-    >>> payment.hours = 4
+    >>> payment.date = today
+    >>> payment.hours = Decimal(4)
     >>> payment.save()
 
-Create leaves:
+Create leaves::
 
     >>> Leave = Model.get('employee.leave')
     >>> leave = Leave()
     >>> leave.employee = employee
     >>> leave.period = period
     >>> leave.type = holidays
-    >>> leave.hours = 24
+    >>> leave.hours = Decimal(24)
+    >>> leave.date = today
+    >>> leave.start = today
+    >>> leave.end = today + relativedelta(days=3)
     >>> leave.save()
     >>> leave = Leave()
     >>> leave.employee = employee
     >>> leave.period = period
     >>> leave.type = holidays
-    >>> leave.hours = 16
+    >>> leave.hours = Decimal(16)
+    >>> leave.date = today
+    >>> leave.start = today
+    >>> leave.end = today + relativedelta(days=2)
     >>> leave.state = 'approved'
     >>> leave.save()
     >>> leave = Leave()
     >>> leave.employee = employee
     >>> leave.period = period
     >>> leave.type = holidays
-    >>> leave.hours = 8
+    >>> leave.date = today
+    >>> leave.start = today
+    >>> leave.end = today + relativedelta(days=1)
+    >>> leave.hours = Decimal(8)
     >>> leave.state = 'done'
     >>> leave.save()
 
-Check summary:
+Check summary::
 
     >>> Summary = Model.get('employee.leave.summary')
     >>> holiday_summary, other_summary = Summary.find([])
-    >>> holiday_summary.employee.name
-    'Employee'
+    >>> holiday_summary.employee.rec_name
+    u'Employee'
     >>> holiday_summary.type.name
-    'Holidays'
+    u'Holidays'
     >>> holiday_summary.hours == Decimal('184')
     True
     >>> holiday_summary.paid == Decimal('4')
@@ -150,10 +160,10 @@ Check summary:
     True
     >>> holiday_summary.available == Decimal('156')
     True
-    >>> other_summary.employee.name
-    'Employee'
+    >>> other_summary.employee.rec_name
+    u'Employee'
     >>> other_summary.type.name
-    'Holidays'
+    u'Other'
     >>> other_summary.hours is None
     True
     >>> other_summary.paid is None
