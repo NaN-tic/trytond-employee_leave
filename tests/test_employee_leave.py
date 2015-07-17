@@ -21,6 +21,9 @@ class TestCase(unittest.TestCase):
         'Test depends'
         test_depends()
 
+    # TODO: add test over get_leave_hours() it is tested on payroll module
+    # scenario
+
 
 def suite():
     suite = trytond.tests.test_tryton.suite()

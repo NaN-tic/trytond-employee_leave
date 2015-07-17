@@ -1,0 +1,480 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "error:employee.leave:"
+msgid ""
+"The leave \"%(leave)s\" exceeds the available hours (%(hours)sh) for "
+"employee \"%(employee)s\" and entitlement type \"%(type)s\" on period "
+"\"%(period)s\"."
+msgstr ""
+"La baixa \"%(leave)s\" excedeix les hores disponibles (%(hours)sh) per "
+"l'empleat \"%(employee)s\" i el tipus d'absència \"%(type)s\" en el període "
+"\"%(period)s\"."
+
+msgctxt "field:company.employee,leave_summary:"
+msgid "Leave Summary"
+msgstr "Sumari d'absències"
+
+msgctxt "field:employee.leave,comment:"
+msgid "Comment"
+msgstr "Comentari"
+
+msgctxt "field:employee.leave,create_date:"
+msgid "Create Date"
+msgstr "Data creació"
+
+msgctxt "field:employee.leave,create_uid:"
+msgid "Create User"
+msgstr "Usuari creació"
+
+msgctxt "field:employee.leave,employee:"
+msgid "Employee"
+msgstr "Empleat"
+
+msgctxt "field:employee.leave,end:"
+msgid "End"
+msgstr "Final"
+
+msgctxt "field:employee.leave,hours:"
+msgid "Hours"
+msgstr "Hores"
+
+msgctxt "field:employee.leave,id:"
+msgid "ID"
+msgstr "Identificador"
+
+msgctxt "field:employee.leave,period:"
+msgid "Period"
+msgstr "Període"
+
+msgctxt "field:employee.leave,rec_name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:employee.leave,request_date:"
+msgid "Request Date"
+msgstr "Data sol·licitud"
+
+msgctxt "field:employee.leave,start:"
+msgid "Start"
+msgstr "Inici"
+
+msgctxt "field:employee.leave,state:"
+msgid "State"
+msgstr "Estat"
+
+msgctxt "field:employee.leave,type:"
+msgid "Type"
+msgstr "Tipus"
+
+msgctxt "field:employee.leave,write_date:"
+msgid "Write Date"
+msgstr "Data modificació"
+
+msgctxt "field:employee.leave,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "field:employee.leave.entitlement,comment:"
+msgid "Comment"
+msgstr "Comentari"
+
+msgctxt "field:employee.leave.entitlement,create_date:"
+msgid "Create Date"
+msgstr "Data creació"
+
+msgctxt "field:employee.leave.entitlement,create_uid:"
+msgid "Create User"
+msgstr "Usuari creació"
+
+msgctxt "field:employee.leave.entitlement,date:"
+msgid "Date"
+msgstr "Data"
+
+msgctxt "field:employee.leave.entitlement,employee:"
+msgid "Employee"
+msgstr "Empleat"
+
+msgctxt "field:employee.leave.entitlement,hours:"
+msgid "Hours"
+msgstr "Hores"
+
+msgctxt "field:employee.leave.entitlement,id:"
+msgid "ID"
+msgstr "Identificador"
+
+msgctxt "field:employee.leave.entitlement,period:"
+msgid "Period"
+msgstr "Període"
+
+msgctxt "field:employee.leave.entitlement,rec_name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:employee.leave.entitlement,type:"
+msgid "Type"
+msgstr "Tipus"
+
+msgctxt "field:employee.leave.entitlement,write_date:"
+msgid "Write Date"
+msgstr "Data modificació"
+
+msgctxt "field:employee.leave.entitlement,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "field:employee.leave.payment,comment:"
+msgid "Comment"
+msgstr "Comentari"
+
+msgctxt "field:employee.leave.payment,create_date:"
+msgid "Create Date"
+msgstr "Data creació"
+
+msgctxt "field:employee.leave.payment,create_uid:"
+msgid "Create User"
+msgstr "Usuari creació"
+
+msgctxt "field:employee.leave.payment,date:"
+msgid "Date"
+msgstr "Data"
+
+msgctxt "field:employee.leave.payment,employee:"
+msgid "Employee"
+msgstr "Empleat"
+
+msgctxt "field:employee.leave.payment,hours:"
+msgid "Hours"
+msgstr "Hores"
+
+msgctxt "field:employee.leave.payment,id:"
+msgid "ID"
+msgstr "Identificador"
+
+msgctxt "field:employee.leave.payment,period:"
+msgid "Period"
+msgstr "Període"
+
+msgctxt "field:employee.leave.payment,rec_name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:employee.leave.payment,type:"
+msgid "Type"
+msgstr "Tipus"
+
+msgctxt "field:employee.leave.payment,write_date:"
+msgid "Write Date"
+msgstr "Data modificació"
+
+msgctxt "field:employee.leave.payment,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "field:employee.leave.period,create_date:"
+msgid "Create Date"
+msgstr "Data creació"
+
+msgctxt "field:employee.leave.period,create_uid:"
+msgid "Create User"
+msgstr "Usuari creació"
+
+msgctxt "field:employee.leave.period,end:"
+msgid "End"
+msgstr "Final"
+
+msgctxt "field:employee.leave.period,id:"
+msgid "ID"
+msgstr "Identificador"
+
+msgctxt "field:employee.leave.period,name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:employee.leave.period,rec_name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:employee.leave.period,start:"
+msgid "Start"
+msgstr "Inici"
+
+msgctxt "field:employee.leave.period,write_date:"
+msgid "Write Date"
+msgstr "Data modificació"
+
+msgctxt "field:employee.leave.period,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "field:employee.leave.summary,available:"
+msgid "Available"
+msgstr "Disponibles"
+
+msgctxt "field:employee.leave.summary,create_date:"
+msgid "Create Date"
+msgstr "Data creació"
+
+msgctxt "field:employee.leave.summary,create_uid:"
+msgid "Create User"
+msgstr "Usuari creació"
+
+msgctxt "field:employee.leave.summary,done:"
+msgid "Done"
+msgstr "Realitzades"
+
+msgctxt "field:employee.leave.summary,employee:"
+msgid "Employee"
+msgstr "Empleat"
+
+msgctxt "field:employee.leave.summary,hours:"
+msgid "Hours"
+msgstr "Hores"
+
+msgctxt "field:employee.leave.summary,id:"
+msgid "ID"
+msgstr "Identificador"
+
+msgctxt "field:employee.leave.summary,paid:"
+msgid "Paid"
+msgstr "Pagada"
+
+msgctxt "field:employee.leave.summary,pending_approval:"
+msgid "Pending Approval"
+msgstr "Pendent d'aprovar"
+
+msgctxt "field:employee.leave.summary,period:"
+msgid "Period"
+msgstr "Període"
+
+msgctxt "field:employee.leave.summary,rec_name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:employee.leave.summary,scheduled:"
+msgid "Scheduled"
+msgstr "Programades"
+
+msgctxt "field:employee.leave.summary,type:"
+msgid "Type"
+msgstr "Tipus"
+
+msgctxt "field:employee.leave.summary,write_date:"
+msgid "Write Date"
+msgstr "Data modificació"
+
+msgctxt "field:employee.leave.summary,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "field:employee.leave.type,create_date:"
+msgid "Create Date"
+msgstr "Data creació"
+
+msgctxt "field:employee.leave.type,create_uid:"
+msgid "Create User"
+msgstr "Usuari creació"
+
+msgctxt "field:employee.leave.type,id:"
+msgid "ID"
+msgstr "Identificador"
+
+msgctxt "field:employee.leave.type,name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:employee.leave.type,rec_name:"
+msgid "Name"
+msgstr "Nom"
+
+msgctxt "field:employee.leave.type,write_date:"
+msgid "Write Date"
+msgstr "Data modificació"
+
+msgctxt "field:employee.leave.type,write_uid:"
+msgid "Write User"
+msgstr "Usuari modificació"
+
+msgctxt "help:employee.leave.entitlement,date:"
+msgid "The date when this entitlement has been deserved."
+msgstr "La data en que es va meritar aquest dret."
+
+msgctxt "help:employee.leave.payment,date:"
+msgid "The date this payment is granted."
+msgstr "La data en que es va concedir aquest pagament."
+
+msgctxt "model:employee.leave,name:"
+msgid "Employee Leave"
+msgstr "Absència d'empleat"
+
+msgctxt "model:employee.leave.entitlement,name:"
+msgid "Employee Leave Entitlement"
+msgstr "Dret d'empleat"
+
+msgctxt "model:employee.leave.payment,name:"
+msgid "Employee Leave Payment"
+msgstr "Pagament absència d'empleat"
+
+msgctxt "model:employee.leave.period,name:"
+msgid "Employee Leave Period"
+msgstr "Període d'absència d'empleat"
+
+msgctxt "model:employee.leave.summary,name:"
+msgid "Employee Leave Summary"
+msgstr "Resum d'absències d'empleat"
+
+msgctxt "model:employee.leave.type,name:"
+msgid "Employee Leave Type"
+msgstr "Tipus d'absència d'empleat"
+
+msgctxt "model:ir.action,name:act_employee_leave"
+msgid "Employee Leave"
+msgstr "Absència d'empleat"
+
+msgctxt "model:ir.action,name:act_employee_leave_entitlement"
+msgid "Employee Entitlement"
+msgstr "Dret d'empleat"
+
+msgctxt "model:ir.action,name:act_employee_leave_payment"
+msgid "Employee Leave Payment"
+msgstr "Pagament absència d'empleat"
+
+msgctxt "model:ir.action,name:act_employee_leave_period"
+msgid "Employee Leave Period"
+msgstr "Període d'absència d'empleat"
+
+msgctxt "model:ir.action,name:act_employee_leave_summary"
+msgid "Employee Leave Summary"
+msgstr "Resum d'absències d'empleat"
+
+msgctxt "model:ir.action,name:act_employee_leave_type"
+msgid "Employee Leave Type"
+msgstr "Tipus d'absència d'empleat"
+
+msgctxt "model:ir.action.act_window.domain,name:act_employee_leave_domain_all"
+msgid "All"
+msgstr "Tots"
+
+msgctxt ""
+"model:ir.action.act_window.domain,name:act_employee_leave_domain_approved"
+msgid "Approved"
+msgstr "Aprovades"
+
+msgctxt ""
+"model:ir.action.act_window.domain,name:act_employee_leave_domain_pending"
+msgid "Pending"
+msgstr "Pendent"
+
+msgctxt ""
+"model:ir.action.act_window.domain,name:act_employee_leave_domain_rejected"
+msgid "Rejected"
+msgstr "Refusat"
+
+msgctxt "model:ir.ui.menu,name:menu_admin"
+msgid "Administration"
+msgstr "Administració"
+
+msgctxt "model:ir.ui.menu,name:menu_config"
+msgid "Configuration"
+msgstr "Configuració"
+
+msgctxt "model:ir.ui.menu,name:menu_employee_leave"
+msgid "Employee Leaves"
+msgstr "Absències d'empleats"
+
+msgctxt "model:ir.ui.menu,name:menu_employee_leave_entitlement"
+msgid "Entitlements"
+msgstr "Drets"
+
+msgctxt "model:ir.ui.menu,name:menu_employee_leave_leave"
+msgid "Leaves"
+msgstr "Absències"
+
+msgctxt "model:ir.ui.menu,name:menu_employee_leave_payment"
+msgid "Leave Payments"
+msgstr "Pagaments d'absències"
+
+msgctxt "model:ir.ui.menu,name:menu_employee_leave_period"
+msgid "Leave Periods"
+msgstr "Períodes d'absència"
+
+msgctxt "model:ir.ui.menu,name:menu_employee_leave_summary"
+msgid "Leave Summaries"
+msgstr "Sumari d'absències"
+
+msgctxt "model:ir.ui.menu,name:menu_employee_leave_type"
+msgid "Leave Types"
+msgstr "Tipus d'absències"
+
+msgctxt "model:res.group,name:group_employee_leave"
+msgid "Employee Leave"
+msgstr "Absència d'empleat"
+
+msgctxt "model:res.group,name:group_employee_leave_admin"
+msgid "Employee Leave Administration"
+msgstr "Administració Absència d'empleat"
+
+msgctxt "selection:employee.leave,state:"
+msgid "Approved"
+msgstr "Aprovada"
+
+msgctxt "selection:employee.leave,state:"
+msgid "Cancelled"
+msgstr "Cancel·lat"
+
+msgctxt "selection:employee.leave,state:"
+msgid "Done"
+msgstr "Realitzada"
+
+msgctxt "selection:employee.leave,state:"
+msgid "Pending"
+msgstr "Pendent"
+
+msgctxt "selection:employee.leave,state:"
+msgid "Rejected"
+msgstr "Refusat"
+
+msgctxt "view:employee.leave.entitlement:"
+msgid "Employee Entitlement"
+msgstr "Dret d'empleat"
+
+msgctxt "view:employee.leave.payment:"
+msgid "Employee Leave Payment"
+msgstr "Pagament absència d'empleat"
+
+msgctxt "view:employee.leave.period:"
+msgid "Employee Leave Period"
+msgstr "Període d'absència d'empleat"
+
+msgctxt "view:employee.leave.summary:"
+msgid "Employee Leave Summary"
+msgstr "Resum d'absències d'empleat"
+
+msgctxt "view:employee.leave.type:"
+msgid "Employee Leave Type"
+msgstr "Tipus d'absència d'empleat"
+
+msgctxt "view:employee.leave:"
+msgid "Approve"
+msgstr "Aprova"
+
+msgctxt "view:employee.leave:"
+msgid "Cancel"
+msgstr "Cancel·la"
+
+msgctxt "view:employee.leave:"
+msgid "Done"
+msgstr "Realitza"
+
+msgctxt "view:employee.leave:"
+msgid "Employee Leave"
+msgstr "Absència d'empleat"
+
+msgctxt "view:employee.leave:"
+msgid "Pending"
+msgstr "Pendent"
+
+msgctxt "view:employee.leave:"
+msgid "Reject"
+msgstr "Refusa"

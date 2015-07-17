@@ -9,8 +9,8 @@
     <label name="type"/>
     <field name="type"/>
     <newline/>
-    <label name="date"/>
-    <field name="date"/>
+    <label name="request_date"/>
+    <field name="request_date"/>
     <label name="hours"/>
     <field name="hours"/>
     <label name="start"/>
@@ -19,6 +19,15 @@
     <field name="end"/>
     <label name="comment" colspan="4" xalign="0.0"/>
     <field name="comment" colspan="4"/>
-    <label name="state"/>
-    <field name="state"/>
+    <group col="4" colspan="4" id="state_buttons">
+        <label name="state"/>
+        <field name="state"/>
+        <group col="5" colspan="2" id="buttons">
+            <button string="Pending" name="pending"/>
+            <button string="Cancel" name="cancel"/>
+            <button string="Reject" name="reject"/>
+            <button string="Approve" name="approve"/>
+            <button string="Done" name="done"/>
+        </group>
+    </group>
 </form>

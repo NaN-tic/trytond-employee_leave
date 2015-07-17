@@ -3,13 +3,14 @@
 from trytond.pool import Pool
 from .leave import *
 
+
 def register():
     Pool.register(
-        LeaveType,
-        LeavePeriod,
+        Type,
+        Period,
         Leave,
         Entitlement,
-        LeavePayment,
+        Payment,
         Employee,
-        LeaveSummary,
+        EmployeeSummary,
         module='employee_leave', type_='model')

@@ -5,7 +5,7 @@
     <field name="employee"/>
     <field name="period"/>
     <field name="type"/>
-    <field name="date"/>
+    <field name="request_date"/>
     <field name="hours"/>
     <field name="start"/>
     <field name="end"/>

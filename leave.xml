@@ -16,7 +16,7 @@
             <field name="group" ref="group_employee_leave_admin"/>
         </record>
         <record model="res.group" id="group_employee_leave">
-            <field name="name">Employee_leave</field>
+            <field name="name">Employee Leave</field>
         </record>
         <record model="res.user-res.group" id="user_admin_group_employee_leave">
             <field name="user" ref="res.user_admin"/>
@@ -50,11 +50,39 @@
             <field name="view" ref="employee_leave_view_form"/>
             <field name="act_window" ref="act_employee_leave"/>
         </record>
+        <record model="ir.action.act_window.domain"
+                id="act_employee_leave_domain_pending">
+            <field name="name">Pending</field>
+            <field name="sequence" eval="10"/>
+            <field name="domain">[('state', '=', 'pending')]</field>
+            <field name="act_window" ref="act_employee_leave"/>
+        </record>
+        <record model="ir.action.act_window.domain"
+                id="act_employee_leave_domain_approved">
+            <field name="name">Approved</field>
+            <field name="sequence" eval="20"/>
+            <field name="domain">[('state', '=', 'approved')]</field>
+            <field name="act_window" ref="act_employee_leave"/>
+        </record>
+        <record model="ir.action.act_window.domain"
+                id="act_employee_leave_domain_rejected">
+            <field name="name">Rejected</field>
+            <field name="sequence" eval="30"/>
+            <field name="domain">[('state', '=', 'rejected')]</field>
+            <field name="act_window" ref="act_employee_leave"/>
+        </record>
+        <record model="ir.action.act_window.domain"
+                id="act_employee_leave_domain_all">
+            <field name="name">All</field>
+            <field name="sequence" eval="9999"/>
+            <field name="act_window" ref="act_employee_leave"/>
+        </record>
+
         <record model="ir.model.access" id="access_employee_leave">
             <field name="model" search="[('model', '=', 'employee.leave')]"/>
             <field name="perm_read" eval="True"/>
-            <field name="perm_write" eval="False"/>
-            <field name="perm_create" eval="False"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="False"/>
         </record>
         <record model="ir.model.access" id="access_employee_leave_admin">
@@ -64,6 +92,44 @@
             <field name="perm_write" eval="True"/>
             <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="True"/>
+        </record>
+
+        <record model="ir.model.button" id="leave_approve_button">
+            <field name="name">approve</field>
+            <field name="model" search="[('model', '=', 'employee.leave')]"/>
+        </record>
+        <record model="ir.model.button-res.group"
+                id="leave_approve_button_group_admin">
+            <field name="button" ref="leave_approve_button"/>
+            <field name="group" ref="group_employee_leave_admin"/>
+        </record>
+        <record model="ir.model.button" id="leave_reject_button">
+            <field name="name">reject</field>
+            <field name="model" search="[('model', '=', 'employee.leave')]"/>
+        </record>
+        <record model="ir.model.button-res.group"
+                id="leave_reject_button_group_admin">
+            <field name="button" ref="leave_reject_button"/>
+            <field name="group" ref="group_employee_leave_admin"/>
+        </record>
+        <record model="ir.rule.group" id="rule_group_leave">
+            <field name="model" search="[('model', '=', 'employee.leave')]"/>
+            <field name="global_p" eval="False"/>
+            <field name="default_p" eval="True"/>
+        </record>
+        <record model="ir.rule" id="rule_leave1">
+            <field name="domain">[('employee', '=', user.employee.id if user.employee else None)]</field>
+            <field name="rule_group" ref="rule_group_leave"/>
+        </record>
+        <record model="ir.rule.group" id="rule_group_leave_admin">
+            <field name="model" search="[('model', '=', 'employee.leave')]"/>
+            <field name="global_p" eval="False"/>
+            <field name="default_p" eval="False"/>
+        </record>
+        <record model="ir.rule.group-res.group"
+            id="rule_group_leave_admin_group_employee_leave_admin">
+            <field name="rule_group" ref="rule_group_leave_admin"/>
+            <field name="group" ref="group_employee_leave_admin"/>
         </record>
         <record model="ir.ui.view" id="employee_leave_entitlement_view_form">
             <field name="model">employee.leave.entitlement</field>
