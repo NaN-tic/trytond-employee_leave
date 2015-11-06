@@ -14,7 +14,7 @@ msgstr ""
 
 msgctxt "field:company.employee,leave_summary:"
 msgid "Leave Summary"
-msgstr "Sumari d'absències"
+msgstr "Resum d'absències"
 
 msgctxt "field:employee.leave,comment:"
 msgid "Comment"
@@ -401,7 +401,7 @@ msgstr "Períodes d'absència"
 
 msgctxt "model:ir.ui.menu,name:menu_employee_leave_summary"
 msgid "Leave Summaries"
-msgstr "Sumari d'absències"
+msgstr "Resum d'absències"
 
 msgctxt "model:ir.ui.menu,name:menu_employee_leave_type"
 msgid "Leave Types"
