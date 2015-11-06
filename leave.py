@@ -197,9 +197,8 @@ class Leave(Workflow, ModelSQL, ModelView):
         pass
 
     @classmethod
-    def get_leave_hours(cls, employee, period_start, period_end, type_=None,
+    def get_leaves(cls, employee, period_start, period_end, type_=None,
             states=None):
-        'Finds the number of hours that fit inside a period'
         domain = [
             ('employee', '=', employee.id),
             ('start', '<=', period_end),
@@ -211,10 +210,15 @@ class Leave(Workflow, ModelSQL, ModelView):
             domain.append(('state', 'in', states))
         else:
             domain.append(('state', '=', 'done'))
+        return cls.search(domain)
 
-        leaves = cls.search(domain)
+    @classmethod
+    def get_leave_hours(cls, employee, period_start, period_end, type_=None,
+            states=None):
+        'Finds the number of hours that fit inside a period'
         count = Decimal('0.0')
-        for leave in leaves:
+        for leave in cls.get_leaves(employee, period_start, period_end,
+                type_=type_, states=states):
             count += leave.compute_leave_hours(period_start, period_end)
         return count
 
