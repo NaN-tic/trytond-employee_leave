@@ -8,7 +8,7 @@ msgid ""
 "employee \"%(employee)s\" and entitlement type \"%(type)s\" on period "
 "\"%(period)s\"."
 msgstr ""
-"La baixa \"%(leave)s\" excedeix les hores disponibles (%(hours)sh) per "
+"L'abscència \"%(leave)s\" excedeix les hores disponibles (%(hours)sh) per "
 "l'empleat \"%(employee)s\" i el tipus d'absència \"%(type)s\" en el període "
 "\"%(period)s\"."
 
