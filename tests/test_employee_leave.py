@@ -3,23 +3,13 @@
 import unittest
 import doctest
 import trytond.tests.test_tryton
-from trytond.tests.test_tryton import test_view, test_depends
+from trytond.tests.test_tryton import ModuleTestCase
 from trytond.tests.test_tryton import doctest_setup, doctest_teardown
 
 
-class TestCase(unittest.TestCase):
+class TestCase(ModuleTestCase):
     'Test module'
-
-    def setUp(self):
-        trytond.tests.test_tryton.install_module('employee_leave')
-
-    def test0005views(self):
-        'Test views'
-        test_view('employee_leave')
-
-    def test0006depends(self):
-        'Test depends'
-        test_depends()
+    module = 'employee_leave'
 
     # TODO: add test over get_leave_hours() it is tested on payroll module
     # scenario

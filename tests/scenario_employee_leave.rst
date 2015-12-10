@@ -12,7 +12,9 @@ Imports::
     >>> from dateutil.relativedelta import relativedelta
     >>> from decimal import Decimal
     >>> from proteus import config, Model, Wizard
-    >>> today = datetime.date(2015, 7, 17)  # make it previsible
+    >>> from trytond.modules.company.tests.tools import create_company, \
+    ...     get_company
+    >>> today = datetime.date.today()
 
 Create database::
 
@@ -21,44 +23,17 @@ Create database::
 
 Install account::
 
-    >>> Module = Model.get('ir.module.module')
+    >>> Module = Model.get('ir.module')
     >>> modules = Module.find([
     ...         ('name', '=', 'employee_leave'),
     ...         ])
     >>> Module.install([x.id for x in modules], config.context)
-    >>> Wizard('ir.module.module.install_upgrade').execute('upgrade')
+    >>> Wizard('ir.module.install_upgrade').execute('upgrade')
 
 Create company::
 
-    >>> Currency = Model.get('currency.currency')
-    >>> CurrencyRate = Model.get('currency.currency.rate')
-    >>> Company = Model.get('company.company')
-    >>> Party = Model.get('party.party')
-    >>> company_config = Wizard('company.company.config')
-    >>> company_config.execute('company')
-    >>> company = company_config.form
-    >>> party = Party(name='Dunder Mifflin')
-    >>> party.save()
-    >>> company.party = party
-    >>> currencies = Currency.find([('code', '=', 'USD')])
-    >>> if not currencies:
-    ...     currency = Currency(name='U.S. Dollar', symbol='$', code='USD',
-    ...         rounding=Decimal('0.01'), mon_grouping='[3, 3, 0]',
-    ...         mon_decimal_point='.', mon_thousands_sep=',')
-    ...     currency.save()
-    ...     CurrencyRate(date=today + relativedelta(month=1, day=1),
-    ...         rate=Decimal('1.0'), currency=currency).save()
-    ... else:
-    ...     currency, = currencies
-    >>> company.currency = currency
-    >>> company_config.execute('add')
-    >>> company, = Company.find()
-
-Reload the context::
-
-    >>> User = Model.get('res.user')
-    >>> Group = Model.get('res.group')
-    >>> config._context = User.get_preferences(True, config.context)
+    >>> _ = create_company()
+    >>> company = get_company()
 
 Create employee::
 
@@ -73,6 +48,8 @@ Create employee::
 
 Create leave user::
 
+    >>> User = Model.get('res.user')
+    >>> Group = Model.get('res.group')
     >>> leave_user = User()
     >>> leave_user.name = 'Employee Leave'
     >>> leave_user.login = 'leave'
@@ -195,17 +172,17 @@ Check summary::
     >>> holiday_summary.type.name
     u'Holidays'
     >>> holiday_summary.hours
-    Decimal('184')
+    Decimal('184.0')
     >>> holiday_summary.paid
-    Decimal('4')
+    Decimal('4.0')
     >>> holiday_summary.done
-    Decimal('8')
+    Decimal('8.0')
     >>> holiday_summary.scheduled
-    Decimal('16')
+    Decimal('16.0')
     >>> holiday_summary.pending_approval
-    Decimal('24')
+    Decimal('24.0')
     >>> holiday_summary.available
-    Decimal('156')
+    Decimal('156.0')
 
     >>> other_summary = summary_by_type[other.id]
     >>> other_summary.type.name
@@ -240,7 +217,7 @@ Check new available hours of holidays::
     >>> employee.reload()
     >>> summary_by_type = {s.type.id: s for s in employee.leave_summary}
     >>> summary_by_type[holidays.id].available
-    Decimal('36')
+    Decimal('36.0')
 
 Ask for more leaves than available::
 
@@ -255,5 +232,5 @@ Ask for more leaves than available::
     >>> unavailable_leave.click('approve')
     Traceback (most recent call last):
         ...
-    UserWarning: ('UserWarning', ('leave_exceds_5', u'The leave "Holidays, 08/01/2015, 40" exceeds the available hours (36h) for employee "Employee" and entitlement type "Holidays" on period "2015".', ''))
+    UserWarning: ('UserWarning', ('leave_exceds_5', u'The leave "Holidays, 08/01/2015, 40" exceeds the available hours (36.0h) for employee "Employee" and entitlement type "Holidays" on period "2015".', ''))
 
