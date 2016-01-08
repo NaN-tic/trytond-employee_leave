@@ -369,7 +369,7 @@ msgstr "Pendiente"
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_employee_leave_domain_rejected"
 msgid "Rejected"
-msgstr "Refusado"
+msgstr "Denegadas"
 
 msgctxt "model:ir.ui.menu,name:menu_admin"
 msgid "Administration"
@@ -433,7 +433,7 @@ msgstr "Pendiente"
 
 msgctxt "selection:employee.leave,state:"
 msgid "Rejected"
-msgstr "Refusado"
+msgstr "Denegada"
 
 msgctxt "view:employee.leave.entitlement:"
 msgid "Employee Entitlement"
@@ -477,4 +477,4 @@ msgstr "Pendiente"
 
 msgctxt "view:employee.leave:"
 msgid "Reject"
-msgstr "Refusar"
+msgstr "Denegar"
