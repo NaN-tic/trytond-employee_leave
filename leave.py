@@ -261,8 +261,8 @@ class Employee:
     __name__ = 'company.employee'
     # This is to report current situation of available leaves on the employee
     # form
-    leave_summary = fields.One2Many('employee.leave.summary',
-        'employee', 'Leave Summary')
+    leave_summary = fields.One2Many('employee.leave.summary', 'employee',
+        'Leave Summary', readonly=True)
 
 
 # It should be possible to have several Entitlements per employee & type &
