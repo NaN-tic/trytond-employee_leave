@@ -363,7 +363,7 @@ class EmployeeSummary(ModelSQL, ModelView):
                 & (payments.type == type_.id)
                 ))
 
-        cursor = Transaction().cursor
+        cursor = Transaction().connection.cursor()
         cursor.execute(*type_.select(Max(type_.id)))
         max_type_id = cursor.fetchone()
         if max_type_id and max_type_id[0]:
