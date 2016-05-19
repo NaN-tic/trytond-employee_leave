@@ -318,7 +318,7 @@
         </record>
         <record model="ir.ui.view" id="employee_view_form">
             <field name="model">company.employee</field>
-            <field name="type">form</field>
+            <field name="type" eval="None"/>
             <field name="inherit" ref="company.employee_view_form"/>
             <field name="name">employee_form</field>
         </record>
