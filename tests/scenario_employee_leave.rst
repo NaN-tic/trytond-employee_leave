@@ -172,17 +172,17 @@ Check summary::
     >>> holiday_summary.type.name
     u'Holidays'
     >>> holiday_summary.hours
-    Decimal('184.0')
+    Decimal('184')
     >>> holiday_summary.paid
-    Decimal('4.0')
+    Decimal('4')
     >>> holiday_summary.done
-    Decimal('8.0')
+    Decimal('8')
     >>> holiday_summary.scheduled
-    Decimal('16.0')
+    Decimal('16')
     >>> holiday_summary.pending_approval
-    Decimal('24.0')
+    Decimal('24')
     >>> holiday_summary.available
-    Decimal('156.0')
+    Decimal('156')
 
     >>> other_summary = summary_by_type[other.id]
     >>> other_summary.type.name
@@ -217,7 +217,7 @@ Check new available hours of holidays::
     >>> employee.reload()
     >>> summary_by_type = {s.type.id: s for s in employee.leave_summary}
     >>> summary_by_type[holidays.id].available
-    Decimal('36.0')
+    Decimal('36')
 
 Ask for more leaves than available::
 
@@ -232,5 +232,5 @@ Ask for more leaves than available::
     >>> unavailable_leave.click('approve')
     Traceback (most recent call last):
         ...
-    UserWarning: ('UserWarning', ('leave_exceds_5', u'The leave "Holidays, 08/01/2015, 40" exceeds the available hours (36.0h) for employee "Employee" and entitlement type "Holidays" on period "2015".', ''))
+    UserWarning: ('UserWarning', ('leave_exceds_5', u'The leave "Holidays, 08/01/2015, 40" exceeds the available hours (36h) for employee "Employee" and entitlement type "Holidays" on period "2016".', ''))
 
