@@ -1,9 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <!-- The COPYRIGHT file at the top level of this repository contains the full
      copyright notices and license terms. -->
 <tryton>
     <data>
-
         <record model="res.group" id="group_employee_leave_admin">
             <field name="name">Employee Leave Administration</field>
         </record>
@@ -322,6 +321,7 @@
             <field name="inherit" ref="company.employee_view_form"/>
             <field name="name">employee_form</field>
         </record>
+
         <!-- Menus -->
         <menuitem id="menu_employee_leave" name="Employee Leaves" sequence="1" />
         <menuitem id="menu_config" name="Configuration" sequence="10"
@@ -360,8 +360,7 @@
             id="menu_employee_leave_summary" parent="menu_admin"
             sequence="1" name="Leave Summaries"/>
 
-    <menuitem action="act_employee_leave" id="menu_employee_leave_leave"
-            parent="menu_employee_leave" sequence="50" name="Leaves"/>
-
+        <menuitem action="act_employee_leave" id="menu_employee_leave_leave"
+                parent="menu_employee_leave" sequence="50" name="Leaves"/>
     </data>
 </tryton>
