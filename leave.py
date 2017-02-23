@@ -284,10 +284,10 @@ class EmployeeSummary(ModelSQL, ModelView):
     def get_available(self, name):
         if self.hours is None:
             return
-        return ((self.hours or Decimal('0.0'))
-            - (self.scheduled or Decimal('0.0'))
-            - (self.done or Decimal('0.0'))
-            - (self.paid or Decimal('0.0')))
+        return ((Decimal(self.hours) if self.hours else Decimal('0.0'))
+            - (Decimal(self.scheduled) if self.scheduled else Decimal('0.0'))
+            - (Decimal(self.done) if self.done else Decimal('0.0'))
+            - (Decimal(self.paid) if self.paid else Decimal('0.0')))
 
     @classmethod
     def table_query(cls):
