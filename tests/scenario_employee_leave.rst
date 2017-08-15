@@ -171,19 +171,18 @@ Check summary::
     True
     >>> holiday_summary.type.name
     u'Holidays'
-    >>> holiday_summary.hours
-    Decimal('184')
-    >>> holiday_summary.paid
-    Decimal('4')
-    >>> holiday_summary.done
-    Decimal('8')
-    >>> holiday_summary.scheduled
-    Decimal('16')
-    >>> holiday_summary.pending_approval
-    Decimal('24')
-    >>> holiday_summary.available
-    Decimal('156')
-
+    >>> holiday_summary.hours == Decimal('184.0')
+    True
+    >>> holiday_summary.paid == Decimal('4.0')
+    True
+    >>> holiday_summary.done == Decimal('8.0')
+    True
+    >>> holiday_summary.scheduled == Decimal('16.0')
+    True
+    >>> holiday_summary.pending_approval == Decimal('24.0')
+    True
+    >>> holiday_summary.available == Decimal('156.0')
+    True
     >>> other_summary = summary_by_type[other.id]
     >>> other_summary.type.name
     u'Other'
@@ -216,8 +215,8 @@ Check new available hours of holidays::
 
     >>> employee.reload()
     >>> summary_by_type = {s.type.id: s for s in employee.leave_summary}
-    >>> summary_by_type[holidays.id].available
-    Decimal('36')
+    >>> summary_by_type[holidays.id].available == Decimal('36.0')
+    True
 
 Ask for more leaves than available::
 
@@ -229,8 +228,7 @@ Ask for more leaves than available::
     >>> unavailable_leave.end = datetime.date(2015, 8, 5)
     >>> unavailable_leave.hours = Decimal(40)
     >>> unavailable_leave.save()
-    >>> unavailable_leave.click('approve')
+    >>> unavailable_leave.click('approve')  # doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
         ...
     UserWarning: ('UserWarning', ('leave_exceds_5', u'The leave "Holidays, 08/01/2015, 40" exceeds the available hours (36h) for employee "Employee" and entitlement type "Holidays" on period "2016".', ''))
-

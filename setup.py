@@ -24,6 +24,7 @@ def get_require_version(name):
         major_version, minor_version + 1)
     return require
 
+
 config = ConfigParser.ConfigParser()
 config.readfp(open('tryton.cfg'))
 info = dict(config.items('tryton'))
