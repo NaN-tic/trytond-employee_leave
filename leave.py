@@ -29,6 +29,7 @@ class Period(ModelSQL, ModelView):
             ('end', '>=', Eval('start')),
             ], depends=['start'])
 
+
 _STATES = {
     'readonly': Eval('state') != 'pending',
     }
