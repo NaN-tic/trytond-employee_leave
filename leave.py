@@ -11,7 +11,6 @@ from trytond.transaction import Transaction
 
 __all__ = ['Type', 'Period', 'Leave', 'Entitlement', 'Payment',
     'Employee', 'EmployeeSummary']
-__metaclass__ = PoolMeta
 
 
 class Type(ModelSQL, ModelView):
@@ -260,6 +259,7 @@ class Payment(ModelSQL, ModelView):
 
 class Employee:
     __name__ = 'company.employee'
+    __metaclass__ = PoolMeta
     # This is to report current situation of available leaves on the employee
     # form
     leave_summary = fields.One2Many('employee.leave.summary',
@@ -364,7 +364,7 @@ class EmployeeSummary(ModelSQL, ModelView):
                 & (payments.type == type_.id)
                 ))
 
-        cursor = Transaction().cursor
+        cursor = Transaction().connection.cursor()
         cursor.execute(*type_.select(Max(type_.id)))
         max_type_id = cursor.fetchone()
         if max_type_id and max_type_id[0]:

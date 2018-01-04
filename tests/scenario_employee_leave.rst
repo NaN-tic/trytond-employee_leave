@@ -2,33 +2,20 @@
 Employee Leaves Scenario
 ========================
 
-=============
-General Setup
-=============
-
 Imports::
 
     >>> import datetime
     >>> from dateutil.relativedelta import relativedelta
     >>> from decimal import Decimal
-    >>> from proteus import config, Model, Wizard
+    >>> from proteus import Model
+    >>> from trytond.tests.tools import activate_modules, set_user
     >>> from trytond.modules.company.tests.tools import create_company, \
     ...     get_company
     >>> today = datetime.date.today()
 
-Create database::
+Install employee_leave::
 
-    >>> config = config.set_trytond()
-    >>> config.pool.test = True
-
-Install account::
-
-    >>> Module = Model.get('ir.module')
-    >>> modules = Module.find([
-    ...         ('name', '=', 'employee_leave'),
-    ...         ])
-    >>> Module.install([x.id for x in modules], config.context)
-    >>> Wizard('ir.module.install_upgrade').execute('upgrade')
+    >>> config = activate_modules('employee_leave')
 
 Create company::
 
@@ -59,12 +46,11 @@ Create leave user::
     >>> leave_user.employees.append(employee)
     >>> leave_user.employee = employee
     >>> leave_user.save()
-    >>> config._context = User.get_preferences(True, config.context)
 
 Create leave admin user::
 
     >>> Lang = Model.get('ir.lang')
-    >>> english, = Lang.find([('code', '=', 'en_US')])
+    >>> english, = Lang.find([('code', '=', 'en')])
     >>> leave_admin_user = User()
     >>> leave_admin_user.name = 'Leave Admin'
     >>> leave_admin_user.login = 'leave_admin'
@@ -74,7 +60,7 @@ Create leave admin user::
     >>> leave_admin_user.groups.append(leave_admin_group)
     >>> leave_admin_user.language = english
     >>> leave_admin_user.save()
-    >>> config.user = leave_admin_user.id
+    >>> set_user(leave_admin_user)
 
 Create leave period::
 
@@ -116,7 +102,7 @@ Create payments::
 
 Create leaves::
 
-    >>> config.user = leave_user.id
+    >>> set_user(leave_user)
     >>> Leave = Model.get('employee.leave')
     >>> first_leave = Leave()
     >>> first_leave.request_date == today
@@ -154,8 +140,7 @@ Create leaves::
 
 Approve and done leaves::
 
-    >>> config.user = leave_admin_user.id
-    >>> config._context = User.get_preferences(True, config.context)
+    >>> set_user(leave_admin_user)
     >>> second_leave.click('approve')
     >>> third_leave.click('approve')
     >>> third_leave.click('done')
