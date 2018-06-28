@@ -102,6 +102,36 @@
             <field name="button" ref="leave_approve_button"/>
             <field name="group" ref="group_employee_leave_admin"/>
         </record>
+        <record model="ir.model.button" id="leave_cancel_button">
+            <field name="name">cancel</field>
+            <field name="model" search="[('model', '=', 'employee.leave')]"/>
+        </record>
+        <record model="ir.model.button-res.group"
+                id="leave_cancel_button_group_admin">
+            <field name="button" ref="leave_cancel_button"/>
+            <field name="group" ref="group_employee_leave_admin"/>
+        </record>
+        <record model="ir.model.button" id="leave_done_button">
+            <field name="name">done</field>
+            <field name="model" search="[('model', '=', 'employee.leave')]"/>
+        </record>
+
+        <record model="ir.model.button-res.group"
+                id="leave_done_button_group_admin">
+            <field name="button" ref="leave_done_button"/>
+            <field name="group" ref="group_employee_leave_admin"/>
+        </record>
+
+        <record model="ir.model.button" id="leave_pending_button">
+            <field name="name">pending</field>
+            <field name="model" search="[('model', '=', 'employee.leave')]"/>
+        </record>
+        <record model="ir.model.button-res.group"
+                id="leave_pending_button_group_admin">
+            <field name="button" ref="leave_pending_button"/>
+            <field name="group" ref="group_employee_leave_admin"/>
+        </record>
+
         <record model="ir.model.button" id="leave_reject_button">
             <field name="name">reject</field>
             <field name="model" search="[('model', '=', 'employee.leave')]"/>
