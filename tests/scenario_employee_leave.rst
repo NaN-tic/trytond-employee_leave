@@ -155,7 +155,7 @@ Check summary::
     >>> holiday_summary.id == (employee.id * 100 + period.id * 10 + holidays.id)
     True
     >>> holiday_summary.type.name
-    u'Holidays'
+    'Holidays'
     >>> holiday_summary.hours == Decimal('184.0')
     True
     >>> holiday_summary.paid == Decimal('4.0')
@@ -170,7 +170,7 @@ Check summary::
     True
     >>> other_summary = summary_by_type[other.id]
     >>> other_summary.type.name
-    u'Other'
+    'Other'
     >>> other_summary.hours is None
     True
     >>> other_summary.paid is None
@@ -216,4 +216,4 @@ Ask for more leaves than available::
     >>> unavailable_leave.click('approve')  # doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
         ...
-    UserWarning: ('UserWarning', ('leave_exceds_5', u'The leave "Holidays, 08/01/2015, 40" exceeds the available hours (36h) for employee "Employee" and entitlement type "Holidays" on period "2016".', ''))
+    UserWarning: ('UserWarning', ('leave_exceds_5', 'The leave "Holidays, 08/01/2015, 40" exceeds the available hours (36h) for employee "Employee" and entitlement type "Holidays" on period "2016".', ''))

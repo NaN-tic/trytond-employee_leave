@@ -257,9 +257,8 @@ class Payment(ModelSQL, ModelView):
     # TODO: Link to supplier invoice or account move
 
 
-class Employee:
+class Employee(metaclass=PoolMeta):
     __name__ = 'company.employee'
-    __metaclass__ = PoolMeta
     # This is to report current situation of available leaves on the employee
     # form
     leave_summary = fields.One2Many('employee.leave.summary',
