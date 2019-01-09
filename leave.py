@@ -8,6 +8,9 @@ from trytond.model import Workflow, ModelSQL, ModelView, fields
 from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval, Id
 from trytond.transaction import Transaction
+from trytond.i18n import gettext
+from trytond.exceptions import UserError
+
 
 __all__ = ['Type', 'Period', 'Leave', 'Entitlement', 'Payment',
     'Employee', 'EmployeeSummary']
@@ -65,12 +68,6 @@ class Leave(Workflow, ModelSQL, ModelView):
     @classmethod
     def __setup__(cls):
         super(Leave, cls).__setup__()
-        cls._error_messages.update({
-                'exceeds_entitelments': (
-                    'The leave "%(leave)s" exceeds the available hours '
-                    '(%(hours)sh) for employee "%(employee)s" and entitlement '
-                    'type "%(type)s" on period "%(period)s".')
-                })
         cls._transitions |= set((
                 ('pending', 'approved'),
                 ('pending', 'cancelled'),
@@ -175,14 +172,13 @@ class Leave(Workflow, ModelSQL, ModelView):
         if not summaries:
             return
         if self.hours > summaries[0].available:
-            self.raise_user_warning('leave_exceds_%d' % self.id,
-                'exceeds_entitelments', {
-                    'leave': self.rec_name,
-                    'hours': summaries[0].available,
-                    'employee': self.employee.rec_name,
-                    'type': self.type.rec_name,
-                    'period': self.period.rec_name,
-                    })
+            raise UserWarning('leave_exceds_%d' % self.id,
+                gettext('employee_leave.exceeds_entitelments',
+                    leave=self.rec_name,
+                    hours=summaries[0].available,
+                    employee=self.employee.rec_name,
+                    type=self.type.rec_name,
+                    period=self.period.rec_name))
 
     @classmethod
     @ModelView.button
