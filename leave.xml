@@ -142,6 +142,7 @@
             <field name="group" ref="group_employee_leave_admin"/>
         </record>
         <record model="ir.rule.group" id="rule_group_leave">
+            <field name="name">Employee Leave Employee Rule</field>
             <field name="model" search="[('model', '=', 'employee.leave')]"/>
             <field name="global_p" eval="False"/>
             <field name="default_p" eval="True"/>
@@ -151,6 +152,7 @@
             <field name="rule_group" ref="rule_group_leave"/>
         </record>
         <record model="ir.rule.group" id="rule_group_leave_admin">
+            <field name="name">Employee Leave Admin Rule</field>
             <field name="model" search="[('model', '=', 'employee.leave')]"/>
             <field name="global_p" eval="False"/>
             <field name="default_p" eval="False"/>
