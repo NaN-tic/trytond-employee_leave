@@ -10,19 +10,11 @@
             <field name="user" ref="res.user_admin"/>
             <field name="group" ref="group_employee_leave_admin"/>
         </record>
-        <record model="res.user-res.group" id="user_trigger_group_employee_leave_admin">
-            <field name="user" ref="res.user_trigger"/>
-            <field name="group" ref="group_employee_leave_admin"/>
-        </record>
         <record model="res.group" id="group_employee_leave">
             <field name="name">Employee Leave</field>
         </record>
         <record model="res.user-res.group" id="user_admin_group_employee_leave">
             <field name="user" ref="res.user_admin"/>
-            <field name="group" ref="group_employee_leave"/>
-        </record>
-        <record model="res.user-res.group" id="user_trigger_group_employee_leave">
-            <field name="user" ref="res.user_trigger"/>
             <field name="group" ref="group_employee_leave"/>
         </record>
         <record model="ir.ui.view" id="employee_leave_view_form">
