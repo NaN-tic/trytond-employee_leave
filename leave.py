@@ -164,6 +164,7 @@ class Leave(Workflow, ModelSQL, ModelView):
         '''
         pool = Pool()
         EmployeeSummary = pool.get('employee.leave.summary')
+        Warning = pool.get('res.user.warning')
         summaries = EmployeeSummary.search([
                 ('employee', '=', self.employee.id),
                 ('type', '=', self.type.id),
@@ -171,8 +172,9 @@ class Leave(Workflow, ModelSQL, ModelView):
                 ])
         if not summaries:
             return
-        if self.hours > summaries[0].available:
-            raise UserWarning('leave_exceds_%d' % self.id,
+        key = 'leave_exceds_%d' % self.id
+        if self.hours > summaries[0].available and Warning.check(key):
+            raise UserWarning(key,
                 gettext('employee_leave.exceeds_entitelments',
                     leave=self.rec_name,
                     hours=summaries[0].available,
