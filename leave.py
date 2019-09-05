@@ -89,7 +89,7 @@ class Leave(Workflow, ModelSQL, ModelView):
                     },
                 'approve': {
                     'invisible': Eval('state') != 'pending',
-                    'icon': 'tryton-go-next',
+                    'icon': 'tryton-forward',
                     'readonly': ~Eval('groups', []).contains(
                         Id('employee_leave', 'group_employee_leave_admin')),
                     },
