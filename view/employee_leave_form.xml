@@ -23,11 +23,11 @@
         <label name="state"/>
         <field name="state"/>
         <group col="5" colspan="2" id="buttons">
-            <button string="Pending" name="pending"/>
-            <button string="Cancel" name="cancel"/>
-            <button string="Reject" name="reject"/>
-            <button string="Approve" name="approve"/>
-            <button string="Done" name="done"/>
+            <button name="pending"/>
+            <button name="cancel"/>
+            <button name="reject"/>
+            <button name="approve"/>
+            <button name="done"/>
         </group>
     </group>
 </form>
