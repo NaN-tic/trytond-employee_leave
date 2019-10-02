@@ -87,6 +87,7 @@
 
         <record model="ir.model.button" id="leave_approve_button">
             <field name="name">approve</field>
+            <field name="string">Approve</field>
             <field name="model" search="[('model', '=', 'employee.leave')]"/>
         </record>
         <record model="ir.model.button-res.group"
@@ -96,6 +97,7 @@
         </record>
         <record model="ir.model.button" id="leave_cancel_button">
             <field name="name">cancel</field>
+            <field name="name">Cancel</field>
             <field name="model" search="[('model', '=', 'employee.leave')]"/>
         </record>
         <record model="ir.model.button-res.group"
@@ -105,6 +107,7 @@
         </record>
         <record model="ir.model.button" id="leave_done_button">
             <field name="name">done</field>
+            <field name="string">Done</field>
             <field name="model" search="[('model', '=', 'employee.leave')]"/>
         </record>
 
@@ -116,6 +119,7 @@
 
         <record model="ir.model.button" id="leave_pending_button">
             <field name="name">pending</field>
+            <field name="string">Pending</field>
             <field name="model" search="[('model', '=', 'employee.leave')]"/>
         </record>
         <record model="ir.model.button-res.group"
@@ -126,6 +130,7 @@
 
         <record model="ir.model.button" id="leave_reject_button">
             <field name="name">reject</field>
+            <field name="string">Reject</field>
             <field name="model" search="[('model', '=', 'employee.leave')]"/>
         </record>
         <record model="ir.model.button-res.group"

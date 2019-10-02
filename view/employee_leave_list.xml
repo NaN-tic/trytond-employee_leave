@@ -11,9 +11,9 @@
     <field name="end"/>
     <field name="state"/>
     <field name="comment"/>
-    <button name="pending" string="Pending" tree_invisible="1"/>
-    <button name="cancel" string="Cancel" tree_invisible="1"/>
-    <button name="reject" string="Reject" tree_invisible="1"/>
-    <button name="approve" string="Approve" tree_invisible="1"/>
-    <button name="done" string="Done" tree_invisible="1"/>
+    <button name="pending" tree_invisible="1"/>
+    <button name="cancel" tree_invisible="1"/>
+    <button name="reject" tree_invisible="1"/>
+    <button name="approve" tree_invisible="1"/>
+    <button name="done" tree_invisible="1"/>
 </tree>
