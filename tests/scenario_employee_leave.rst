@@ -213,7 +213,7 @@ Ask for more leaves than available::
     >>> unavailable_leave.end = datetime.date(2015, 8, 5)
     >>> unavailable_leave.hours = Decimal(40)
     >>> unavailable_leave.save()
-    >>> unavailable_leave.click('approve')  # doctest: +IGNORE_EXCEPTION_DETAIL
+    >>> unavailable_leave.click('approve') # doctest: +IGNORE_EXCEPTION_DETAIL
     Traceback (most recent call last):
         ...
-    UserWarning: ('UserWarning', ('leave_exceds_5', 'The leave "Holidays, 08/01/2015, 40" exceeds the available hours (36h) for employee "Employee" and entitlement type "Holidays" on period "2016".', ''))
+    UserWarning: ...
