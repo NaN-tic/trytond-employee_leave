@@ -4,4 +4,6 @@
 <form string="Employee Leave Type">
     <label name="name"/>
     <field name="name"/>
+    <label name="allow_right"/>
+    <field name="allow_right"/>
 </form>

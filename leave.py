@@ -18,6 +18,11 @@ class Type(ModelSQL, ModelView):
     'Employee Leave Type'
     __name__ = 'employee.leave.type'
     name = fields.Char('Name', required=True)
+    allow_right = fields.Boolean('Allow Rigth')
+
+    @staticmethod
+    def default_allow_right():
+        return True
 
 
 class Period(ModelSQL, ModelView):
@@ -51,7 +56,7 @@ class Leave(Workflow, ModelSQL, ModelView):
     end = fields.Date('End', required=True, domain=[
             ('end', '>=', Eval('start')),
             ], states=_STATES, depends=_DEPENDS + ['start'])
-    hours = fields.Numeric('Hours', required=True, states=_STATES,
+    hours = fields.Numeric('Hours to consume', required=True, states=_STATES,
         depends=_DEPENDS)
     comment = fields.Text('Comment', states=_STATES, depends=_DEPENDS)
     state = fields.Selection([
@@ -65,6 +70,10 @@ class Leave(Workflow, ModelSQL, ModelView):
     @classmethod
     def __setup__(cls):
         super(Leave, cls).__setup__()
+        cls._order = [
+            ('start', 'DESC'),
+            ('id', 'DESC'),
+            ]
         cls._error_messages.update({
                 'exceeds_entitelments': (
                     'The leave "%(leave)s" exceeds the available hours '
@@ -308,6 +317,8 @@ class EmployeeSummary(ModelSQL, ModelView):
         entitlement = Entitlement.__table__()
         employee = Employee.__table__()
 
+        leave_types = [l.id for l in Type.search([('allow_right', '=', True)])]
+
         # Had to add stupid conditions as otherwise the query fails
         table = employee.join(type_, condition=(type_.id >= 0)).join(period,
             condition=(period.id >= 0))
@@ -323,6 +334,7 @@ class EmployeeSummary(ModelSQL, ModelView):
                 (entitlements.employee == employee.id)
                 & (entitlements.period == period.id)
                 & (entitlements.type == type_.id)
+                & (entitlements.type.in_(leave_types))
                 ))
 
         fields = {}
@@ -337,7 +349,7 @@ class EmployeeSummary(ModelSQL, ModelView):
                 leave.type,
                 Sum(leave.hours).as_('hours'),
                 where=(
-                    leave.state == state
+                    (leave.state == state) & leave.type.in_(leave_types)
                     ),
                 group_by=(
                     leave.employee, leave.period, leave.type
@@ -346,6 +358,7 @@ class EmployeeSummary(ModelSQL, ModelView):
                     (leaves.employee == employee.id)
                     & (leaves.period == period.id)
                     & (leaves.type == type_.id)
+                    & (leaves.type.in_(leave_types))
                     ))
             fields[field_name] = Column(leaves, 'hours')
 
@@ -397,5 +410,5 @@ class EmployeeSummary(ModelSQL, ModelView):
                 cls.scheduled.sql_type().base).as_('scheduled'),
             fields['done'].cast(cls.done.sql_type().base).as_('done'),
             payments.hours.cast(cls.paid.sql_type().base).as_('paid'),
-            )
+            where=(type_.id.in_(leave_types)))
         return query

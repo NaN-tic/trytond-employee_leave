@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
@@ -37,12 +37,12 @@ msgid "End"
 msgstr "Finalizar"
 
 msgctxt "field:employee.leave,hours:"
-msgid "Hours"
-msgstr "Horas"
+msgid "Hours to consume"
+msgstr "Horas a consumir"
 
 msgctxt "field:employee.leave,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:employee.leave,period:"
 msgid "Period"
@@ -102,7 +102,7 @@ msgstr "Horas"
 
 msgctxt "field:employee.leave.entitlement,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:employee.leave.entitlement,period:"
 msgid "Period"
@@ -150,7 +150,7 @@ msgstr "Horas"
 
 msgctxt "field:employee.leave.payment,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:employee.leave.payment,period:"
 msgid "Period"
@@ -186,7 +186,7 @@ msgstr "Finalizar"
 
 msgctxt "field:employee.leave.period,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:employee.leave.period,name:"
 msgid "Name"
@@ -234,7 +234,7 @@ msgstr "Horas"
 
 msgctxt "field:employee.leave.summary,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:employee.leave.summary,paid:"
 msgid "Paid"
@@ -278,7 +278,7 @@ msgstr "Usuario creación"
 
 msgctxt "field:employee.leave.type,id:"
 msgid "ID"
-msgstr "Identificador"
+msgstr "ID"
 
 msgctxt "field:employee.leave.type,name:"
 msgid "Name"
