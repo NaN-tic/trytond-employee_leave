@@ -97,7 +97,7 @@
         </record>
         <record model="ir.model.button" id="leave_cancel_button">
             <field name="name">cancel</field>
-            <field name="name">Cancel</field>
+            <field name="string">Cancel</field>
             <field name="model" search="[('model', '=', 'employee.leave')]"/>
         </record>
         <record model="ir.model.button-res.group"
