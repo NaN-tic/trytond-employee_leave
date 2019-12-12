@@ -37,8 +37,8 @@ msgid "End"
 msgstr "Finalizar"
 
 msgctxt "field:employee.leave,hours:"
-msgid "Hours to consume"
-msgstr "Horas a consumir"
+msgid "Hours"
+msgstr "Horas"
 
 msgctxt "field:employee.leave,id:"
 msgid "ID"

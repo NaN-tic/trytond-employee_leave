@@ -3,5 +3,4 @@
      copyright notices and license terms. -->
 <tree string="Employee Leave Type">
     <field name="name"/>
-    <field name="allow_right"/>
 </tree>
