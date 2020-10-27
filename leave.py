@@ -9,7 +9,6 @@ from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval, Id
 from trytond.transaction import Transaction
 from trytond.i18n import gettext
-from trytond.exceptions import UserError
 
 
 __all__ = ['Type', 'Period', 'Leave', 'Entitlement', 'Payment',
