@@ -6,7 +6,7 @@ from decimal import Decimal
 
 from trytond.model import Workflow, ModelSQL, ModelView, fields
 from trytond.pool import Pool, PoolMeta
-from trytond.pyson import Eval, Id
+from trytond.pyson import Eval
 from trytond.transaction import Transaction
 from trytond.i18n import gettext
 
@@ -98,14 +98,10 @@ class Leave(Workflow, ModelSQL, ModelView):
                 'approve': {
                     'invisible': Eval('state') != 'pending',
                     'icon': 'tryton-forward',
-                    'readonly': ~Eval('groups', []).contains(
-                        Id('employee_leave', 'group_employee_leave_admin')),
                     },
                 'reject': {
                     'invisible': ~Eval('state').in_(['pending', 'approved']),
                     'icon': 'tryton-undo',
-                    'readonly': ~Eval('groups', []).contains(
-                        Id('employee_leave', 'group_employee_leave_admin')),
                     },
                 'done': {
                     'invisible': Eval('state') != 'approved',
