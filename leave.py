@@ -9,6 +9,7 @@ from trytond.pool import Pool, PoolMeta
 from trytond.pyson import Eval
 from trytond.transaction import Transaction
 from trytond.i18n import gettext
+from trytond.exceptions import UserWarning
 
 
 __all__ = ['Type', 'Period', 'Leave', 'Entitlement', 'Payment',
@@ -177,7 +178,7 @@ class Leave(Workflow, ModelSQL, ModelView):
         if not summaries:
             return
         key = 'leave_exceds_%d' % self.id
-        if self.hours > summaries[0].available and Warning.check(key):
+        if self.hours > (summaries[0].available or Decimal(0)) and Warning.check(key):
             raise UserWarning(key,
                 gettext('employee_leave.exceeds_entitelments',
                     leave=self.rec_name,
