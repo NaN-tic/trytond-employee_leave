@@ -310,8 +310,10 @@ class EmployeeSummary(ModelSQL, ModelView):
         type_ = Type.__table__()
         entitlement = Entitlement.__table__()
         employee = Employee.__table__()
+        leave_type = Type.__table__()
 
-        leave_types = [l.id for l in Type.search([('allow_right', '=', True)])]
+        leave_types = leave_type.select(leave_type.id,
+            where=leave_type.allow_right == True)
 
         # Had to add stupid conditions as otherwise the query fails
         table = employee.join(type_, condition=(type_.id >= 0)).join(period,
