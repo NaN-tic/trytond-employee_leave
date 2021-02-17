@@ -2,16 +2,6 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-msgctxt "error:employee.leave:"
-msgid ""
-"The leave \"%(leave)s\" exceeds the available hours (%(hours)sh) for "
-"employee \"%(employee)s\" and entitlement type \"%(type)s\" on period "
-"\"%(period)s\"."
-msgstr ""
-"La ausencia \"%(leave)s\" excede las horas disponibles (%(hours)sh) para el "
-"empleado \"%(employee)s\" y el tipo de ausencia \"%(type)s\" en el período "
-"\"%(period)s\"."
-
 msgctxt "field:company.employee,leave_summary:"
 msgid "Leave Summary"
 msgstr "Resumen ausencias"
@@ -19,14 +9,6 @@ msgstr "Resumen ausencias"
 msgctxt "field:employee.leave,comment:"
 msgid "Comment"
 msgstr "Comentario"
-
-msgctxt "field:employee.leave,create_date:"
-msgid "Create Date"
-msgstr "Fecha creación"
-
-msgctxt "field:employee.leave,create_uid:"
-msgid "Create User"
-msgstr "Usuario creación"
 
 msgctxt "field:employee.leave,employee:"
 msgid "Employee"
@@ -40,17 +22,9 @@ msgctxt "field:employee.leave,hours:"
 msgid "Hours to consume"
 msgstr "Horas a consumir"
 
-msgctxt "field:employee.leave,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:employee.leave,period:"
 msgid "Period"
 msgstr "Período"
-
-msgctxt "field:employee.leave,rec_name:"
-msgid "Name"
-msgstr "Nombre"
 
 msgctxt "field:employee.leave,request_date:"
 msgid "Request Date"
@@ -68,25 +42,9 @@ msgctxt "field:employee.leave,type:"
 msgid "Type"
 msgstr "Tipo"
 
-msgctxt "field:employee.leave,write_date:"
-msgid "Write Date"
-msgstr "Fecha modificación"
-
-msgctxt "field:employee.leave,write_uid:"
-msgid "Write User"
-msgstr "Usuario modificación"
-
 msgctxt "field:employee.leave.entitlement,comment:"
 msgid "Comment"
 msgstr "Comentario"
-
-msgctxt "field:employee.leave.entitlement,create_date:"
-msgid "Create Date"
-msgstr "Fecha creación"
-
-msgctxt "field:employee.leave.entitlement,create_uid:"
-msgid "Create User"
-msgstr "Usuario creación"
 
 msgctxt "field:employee.leave.entitlement,date:"
 msgid "Date"
@@ -100,41 +58,17 @@ msgctxt "field:employee.leave.entitlement,hours:"
 msgid "Hours"
 msgstr "Horas"
 
-msgctxt "field:employee.leave.entitlement,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:employee.leave.entitlement,period:"
 msgid "Period"
 msgstr "Período"
-
-msgctxt "field:employee.leave.entitlement,rec_name:"
-msgid "Name"
-msgstr "Nombre"
 
 msgctxt "field:employee.leave.entitlement,type:"
 msgid "Type"
 msgstr "Tipo"
 
-msgctxt "field:employee.leave.entitlement,write_date:"
-msgid "Write Date"
-msgstr "Fecha modificación"
-
-msgctxt "field:employee.leave.entitlement,write_uid:"
-msgid "Write User"
-msgstr "Usuario modificación"
-
 msgctxt "field:employee.leave.payment,comment:"
 msgid "Comment"
 msgstr "Comentario"
-
-msgctxt "field:employee.leave.payment,create_date:"
-msgid "Create Date"
-msgstr "Fecha creación"
-
-msgctxt "field:employee.leave.payment,create_uid:"
-msgid "Create User"
-msgstr "Usuario creación"
 
 msgctxt "field:employee.leave.payment,date:"
 msgid "Date"
@@ -148,51 +82,19 @@ msgctxt "field:employee.leave.payment,hours:"
 msgid "Hours"
 msgstr "Horas"
 
-msgctxt "field:employee.leave.payment,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:employee.leave.payment,period:"
 msgid "Period"
 msgstr "Período"
-
-msgctxt "field:employee.leave.payment,rec_name:"
-msgid "Name"
-msgstr "Nombre"
 
 msgctxt "field:employee.leave.payment,type:"
 msgid "Type"
 msgstr "Tipo"
 
-msgctxt "field:employee.leave.payment,write_date:"
-msgid "Write Date"
-msgstr "Fecha modificación"
-
-msgctxt "field:employee.leave.payment,write_uid:"
-msgid "Write User"
-msgstr "Usuario modificación"
-
-msgctxt "field:employee.leave.period,create_date:"
-msgid "Create Date"
-msgstr "Fecha creación"
-
-msgctxt "field:employee.leave.period,create_uid:"
-msgid "Create User"
-msgstr "Usuario creación"
-
 msgctxt "field:employee.leave.period,end:"
 msgid "End"
 msgstr "Finalizar"
 
-msgctxt "field:employee.leave.period,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:employee.leave.period,name:"
-msgid "Name"
-msgstr "Nombre"
-
-msgctxt "field:employee.leave.period,rec_name:"
 msgid "Name"
 msgstr "Nombre"
 
@@ -200,25 +102,9 @@ msgctxt "field:employee.leave.period,start:"
 msgid "Start"
 msgstr "Inicio"
 
-msgctxt "field:employee.leave.period,write_date:"
-msgid "Write Date"
-msgstr "Fecha modificación"
-
-msgctxt "field:employee.leave.period,write_uid:"
-msgid "Write User"
-msgstr "Usuario modificación"
-
 msgctxt "field:employee.leave.summary,available:"
 msgid "Available"
 msgstr "Disponible"
-
-msgctxt "field:employee.leave.summary,create_date:"
-msgid "Create Date"
-msgstr "Fecha creación"
-
-msgctxt "field:employee.leave.summary,create_uid:"
-msgid "Create User"
-msgstr "Usuario creación"
 
 msgctxt "field:employee.leave.summary,done:"
 msgid "Done"
@@ -232,10 +118,6 @@ msgctxt "field:employee.leave.summary,hours:"
 msgid "Hours"
 msgstr "Horas"
 
-msgctxt "field:employee.leave.summary,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:employee.leave.summary,paid:"
 msgid "Paid"
 msgstr "Pagada"
@@ -248,10 +130,6 @@ msgctxt "field:employee.leave.summary,period:"
 msgid "Period"
 msgstr "Período"
 
-msgctxt "field:employee.leave.summary,rec_name:"
-msgid "Name"
-msgstr "Nombre"
-
 msgctxt "field:employee.leave.summary,scheduled:"
 msgid "Scheduled"
 msgstr "Programado"
@@ -260,41 +138,13 @@ msgctxt "field:employee.leave.summary,type:"
 msgid "Type"
 msgstr "Tipo"
 
-msgctxt "field:employee.leave.summary,write_date:"
-msgid "Write Date"
-msgstr "Fecha modificación"
-
-msgctxt "field:employee.leave.summary,write_uid:"
-msgid "Write User"
-msgstr "Usuario modificación"
-
-msgctxt "field:employee.leave.type,create_date:"
-msgid "Create Date"
-msgstr "Fecha creación"
-
-msgctxt "field:employee.leave.type,create_uid:"
-msgid "Create User"
-msgstr "Usuario creación"
-
-msgctxt "field:employee.leave.type,id:"
-msgid "ID"
-msgstr "ID"
+msgctxt "field:employee.leave.type,allow_right:"
+msgid "Allow Rigth"
+msgstr "Permitir"
 
 msgctxt "field:employee.leave.type,name:"
 msgid "Name"
 msgstr "Nombre"
-
-msgctxt "field:employee.leave.type,rec_name:"
-msgid "Name"
-msgstr "Nombre"
-
-msgctxt "field:employee.leave.type,write_date:"
-msgid "Write Date"
-msgstr "Fecha modificación"
-
-msgctxt "field:employee.leave.type,write_uid:"
-msgid "Write User"
-msgstr "Usuario modificación"
 
 msgctxt "help:employee.leave.entitlement,date:"
 msgid "The date when this entitlement has been deserved."
@@ -331,6 +181,10 @@ msgstr "Tipo ausencia empleado"
 msgctxt "model:ir.action,name:act_employee_leave"
 msgid "Employee Leave"
 msgstr "Ausencia empleado"
+
+msgctxt "model:ir.action,name:act_employee_leave_calendar"
+msgid "Employee Leaves"
+msgstr "Ausencias empleado"
 
 msgctxt "model:ir.action,name:act_employee_leave_entitlement"
 msgid "Employee Entitlement"
@@ -371,6 +225,44 @@ msgctxt ""
 msgid "Rejected"
 msgstr "Refusado"
 
+msgctxt "model:ir.message,text:exceeds_entitelments"
+msgid ""
+"The leave \"%(leave)s\" exceeds the available hours (%(hours)sh) for "
+"employee \"%(employee)s\" and entitlement type \"%(type)s\" on period "
+"\"%(period)s\"."
+msgstr ""
+"La ausencia \"%(leave)s\" excede de las horas disponibles (%(hours)sh) para el "
+"empleado \"%(employee)s\" y el tipo de ausencia \"%(type)s\" en el período "
+"\"%(period)s\"."
+
+msgctxt "model:ir.model.button,string:leave_approve_button"
+msgid "Approve"
+msgstr "Aprobar"
+
+msgctxt "model:ir.model.button,string:leave_cancel_button"
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgctxt "model:ir.model.button,string:leave_done_button"
+msgid "Done"
+msgstr "Realizar"
+
+msgctxt "model:ir.model.button,string:leave_pending_button"
+msgid "Pending"
+msgstr "Pendiente"
+
+msgctxt "model:ir.model.button,string:leave_reject_button"
+msgid "Reject"
+msgstr "Refusar"
+
+msgctxt "model:ir.rule.group,name:rule_group_leave"
+msgid "Employee Leave Employee Rule"
+msgstr "Regla ausencia empleado - empleado"
+
+msgctxt "model:ir.rule.group,name:rule_group_leave_admin"
+msgid "Employee Leave Admin Rule"
+msgstr "Regla ausencia empleado - administrador"
+
 msgctxt "model:ir.ui.menu,name:menu_admin"
 msgid "Administration"
 msgstr "Administración"
@@ -380,6 +272,10 @@ msgid "Configuration"
 msgstr "Configuración"
 
 msgctxt "model:ir.ui.menu,name:menu_employee_leave"
+msgid "Employee Leaves"
+msgstr "Ausencias empleado"
+
+msgctxt "model:ir.ui.menu,name:menu_employee_leave_calendar"
 msgid "Employee Leaves"
 msgstr "Ausencias empleado"
 
