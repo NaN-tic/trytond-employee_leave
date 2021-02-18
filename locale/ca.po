@@ -259,6 +259,10 @@ msgctxt "model:ir.model.button,string:leave_reject_button"
 msgid "Reject"
 msgstr "Refusa"
 
+msgctxt "model:ir.rule.group,name:rule_group_invoice_line"
+msgid "User in company"
+msgstr "Usuari a l'empresa"
+
 msgctxt "model:ir.rule.group,name:rule_group_leave"
 msgid "Employee Leave Employee Rule"
 msgstr "Regla absències d'empleat - empleat"

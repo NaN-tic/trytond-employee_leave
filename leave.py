@@ -47,6 +47,7 @@ class Leave(Workflow, ModelSQL, ModelView):
     'Employee Leave'
     __name__ = 'employee.leave'
     employee = fields.Many2One('company.employee', 'Employee', required=True,
+        domain=[('company', '=', Eval('context', {}).get('company', -1)),],
         states=_STATES, depends=_DEPENDS)
     period = fields.Many2One('employee.leave.period', 'Period', required=True,
         states=_STATES, depends=_DEPENDS)
