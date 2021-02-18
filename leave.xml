@@ -170,6 +170,18 @@
             <field name="group" ref="group_employee_leave_admin"/>
         </record>
 
+        <record model="ir.rule.group" id="rule_group_invoice_line">
+             <field name="name">User in company</field>
+             <field name="model" search="[('model', '=', 'employee.leave')]"/>
+             <field name="global_p" eval="True"/>
+         </record>
+         <record model="ir.rule" id="rule_invoice_line1">
+             <field name="domain"
+                 eval="[('employee.company', '=', Eval('user', {}).get('company', None))]"
+                 pyson="1"/>
+             <field name="rule_group" ref="rule_group_invoice_line"/>
+         </record>
+
         <!-- employee.leave.entitlement -->
         <record model="ir.ui.view" id="employee_leave_entitlement_view_form">
             <field name="model">employee.leave.entitlement</field>
@@ -183,6 +195,9 @@
         </record>
         <record model="ir.action.act_window" id="act_employee_leave_entitlement">
             <field name="name">Employee Entitlement</field>
+            <field name="domain"
+                eval="[('employee.company', '=', Eval('context', {}).get('company', -1))]"
+                pyson="1"/>
             <field name="res_model">employee.leave.entitlement</field>
         </record>
         <record model="ir.action.act_window.view" id="act_employee_leave_entitlement_view1">
@@ -326,6 +341,9 @@
         </record>
         <record model="ir.action.act_window" id="act_employee_leave_summary">
             <field name="name">Employee Leave Summary</field>
+            <field name="domain"
+                eval="[('employee.company', '=', Eval('context', {}).get('company', -1))]"
+                pyson="1"/>
             <field name="res_model">employee.leave.summary</field>
         </record>
         <record model="ir.action.act_window.view" id="act_employee_leave_summary_view1">
