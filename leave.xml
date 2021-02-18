@@ -17,6 +17,8 @@
             <field name="user" ref="res.user_admin"/>
             <field name="group" ref="group_employee_leave"/>
         </record>
+
+        <!-- employee.leave -->
         <record model="ir.ui.view" id="employee_leave_view_form">
             <field name="model">employee.leave</field>
             <field name="type">form</field>
@@ -167,6 +169,8 @@
             <field name="rule_group" ref="rule_group_leave_admin"/>
             <field name="group" ref="group_employee_leave_admin"/>
         </record>
+
+        <!-- employee.leave.entitlement -->
         <record model="ir.ui.view" id="employee_leave_entitlement_view_form">
             <field name="model">employee.leave.entitlement</field>
             <field name="type">form</field>
@@ -215,6 +219,8 @@
             <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="True"/>
         </record>
+
+        <!-- employee.leave.payment -->
         <record model="ir.ui.view" id="employee_leave_payment_view_form">
             <field name="model">employee.leave.payment</field>
             <field name="type">form</field>
@@ -262,6 +268,8 @@
             <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="True"/>
         </record>
+
+        <!-- employee.leave.period -->
         <record model="ir.ui.view" id="employee_leave_period_view_form">
             <field name="model">employee.leave.period</field>
             <field name="type">form</field>
@@ -309,6 +317,8 @@
             <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="True"/>
         </record>
+
+        <!-- employee.leave.summary -->
         <record model="ir.ui.view" id="employee_leave_summary_view_list">
             <field name="model">employee.leave.summary</field>
             <field name="type">tree</field>
@@ -346,6 +356,8 @@
             <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="True"/>
         </record>
+
+        <!-- employee.leave.type -->
         <record model="ir.ui.view" id="employee_leave_type_view_form">
             <field name="model">employee.leave.type</field>
             <field name="type">form</field>
@@ -440,5 +452,32 @@
 
         <menuitem action="act_employee_leave" id="menu_employee_leave_leave"
                 parent="menu_employee_leave" sequence="50" name="Leaves"/>
+
+        <!-- employee.leave calendar -->
+        <record model="ir.ui.view" id="employee_leave_calendar_view_calendar">
+            <field name="model">employee.leave</field>
+            <field name="type">calendar</field>
+            <field name="name">employee_leave_calendar</field>
+        </record>
+
+        <record model="ir.action.act_window" id="act_employee_leave_calendar">
+            <field name="name">Employee Leaves</field>
+            <field name="res_model">employee.leave</field>
+            <!-- <field name="context_model">employee_leave.calendar.context</field> -->
+            <field name="search_value" eval="[('employee', '=', Eval('context', {}).get('employee.rec_name', '%'))]" pyson="1"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_employee_leave_calendar_calendar">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="employee_leave_calendar_view_calendar"/>
+            <field name="act_window" ref="act_employee_leave_calendar"/>
+        </record>
+        <record model="ir.action.act_window.view" id="act_employee_leave_calendar_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="employee_leave_view_form"/>
+            <field name="act_window" ref="act_employee_leave_calendar"/>
+        </record>
+
+        <menuitem parent="menu_employee_leave_leave" sequence="10"
+            action="act_employee_leave_calendar" id="menu_employee_leave_calendar"/>
     </data>
 </tryton>
