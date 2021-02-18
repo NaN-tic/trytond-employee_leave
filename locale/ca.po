@@ -38,6 +38,10 @@ msgctxt "field:employee.leave,state:"
 msgid "State"
 msgstr "Estat"
 
+msgctxt "field:employee.leave,summary:"
+msgid "Summary"
+msgstr "Resum"
+
 msgctxt "field:employee.leave,type:"
 msgid "Type"
 msgstr "Tipus"
