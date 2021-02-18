@@ -62,6 +62,7 @@ class Leave(Workflow, ModelSQL, ModelView):
     hours = fields.Numeric('Hours to consume', required=True, states=_STATES,
         depends=_DEPENDS)
     comment = fields.Text('Comment', states=_STATES, depends=_DEPENDS)
+    summary = fields.Function(fields.Char('Summary'), 'get_summary')
     state = fields.Selection([
             ('pending', 'Pending'),
             ('approved', 'Approved'),
@@ -233,6 +234,9 @@ class Leave(Workflow, ModelSQL, ModelView):
         e = min(self.end, period_end)
         days = (e - s).days + 1
         return hours_per_day * days
+
+    def get_summary(self, name):
+        return ' - '.join([self.type.rec_name, self.employee.rec_name])
 
 
 class Entitlement(ModelSQL, ModelView):

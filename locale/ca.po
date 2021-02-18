@@ -2,16 +2,6 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
-msgctxt "error:employee.leave:"
-msgid ""
-"The leave \"%(leave)s\" exceeds the available hours (%(hours)sh) for "
-"employee \"%(employee)s\" and entitlement type \"%(type)s\" on period "
-"\"%(period)s\"."
-msgstr ""
-"L'abscència \"%(leave)s\" excedeix les hores disponibles (%(hours)sh) per "
-"l'empleat \"%(employee)s\" i el tipus d'absència \"%(type)s\" en el període "
-"\"%(period)s\"."
-
 msgctxt "field:company.employee,leave_summary:"
 msgid "Leave Summary"
 msgstr "Resum d'absències"
@@ -19,14 +9,6 @@ msgstr "Resum d'absències"
 msgctxt "field:employee.leave,comment:"
 msgid "Comment"
 msgstr "Comentari"
-
-msgctxt "field:employee.leave,create_date:"
-msgid "Create Date"
-msgstr "Data creació"
-
-msgctxt "field:employee.leave,create_uid:"
-msgid "Create User"
-msgstr "Usuari creació"
 
 msgctxt "field:employee.leave,employee:"
 msgid "Employee"
@@ -40,17 +22,9 @@ msgctxt "field:employee.leave,hours:"
 msgid "Hours to consume"
 msgstr "Hores a consumir"
 
-msgctxt "field:employee.leave,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:employee.leave,period:"
 msgid "Period"
 msgstr "Període"
-
-msgctxt "field:employee.leave,rec_name:"
-msgid "Name"
-msgstr "Nom"
 
 msgctxt "field:employee.leave,request_date:"
 msgid "Request Date"
@@ -64,29 +38,17 @@ msgctxt "field:employee.leave,state:"
 msgid "State"
 msgstr "Estat"
 
+msgctxt "field:employee.leave,summary:"
+msgid "Summary"
+msgstr "Resum"
+
 msgctxt "field:employee.leave,type:"
 msgid "Type"
 msgstr "Tipus"
 
-msgctxt "field:employee.leave,write_date:"
-msgid "Write Date"
-msgstr "Data modificació"
-
-msgctxt "field:employee.leave,write_uid:"
-msgid "Write User"
-msgstr "Usuari modificació"
-
 msgctxt "field:employee.leave.entitlement,comment:"
 msgid "Comment"
 msgstr "Comentari"
-
-msgctxt "field:employee.leave.entitlement,create_date:"
-msgid "Create Date"
-msgstr "Data creació"
-
-msgctxt "field:employee.leave.entitlement,create_uid:"
-msgid "Create User"
-msgstr "Usuari creació"
 
 msgctxt "field:employee.leave.entitlement,date:"
 msgid "Date"
@@ -100,41 +62,17 @@ msgctxt "field:employee.leave.entitlement,hours:"
 msgid "Hours"
 msgstr "Hores"
 
-msgctxt "field:employee.leave.entitlement,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:employee.leave.entitlement,period:"
 msgid "Period"
 msgstr "Període"
-
-msgctxt "field:employee.leave.entitlement,rec_name:"
-msgid "Name"
-msgstr "Nom"
 
 msgctxt "field:employee.leave.entitlement,type:"
 msgid "Type"
 msgstr "Tipus"
 
-msgctxt "field:employee.leave.entitlement,write_date:"
-msgid "Write Date"
-msgstr "Data modificació"
-
-msgctxt "field:employee.leave.entitlement,write_uid:"
-msgid "Write User"
-msgstr "Usuari modificació"
-
 msgctxt "field:employee.leave.payment,comment:"
 msgid "Comment"
 msgstr "Comentari"
-
-msgctxt "field:employee.leave.payment,create_date:"
-msgid "Create Date"
-msgstr "Data creació"
-
-msgctxt "field:employee.leave.payment,create_uid:"
-msgid "Create User"
-msgstr "Usuari creació"
 
 msgctxt "field:employee.leave.payment,date:"
 msgid "Date"
@@ -148,51 +86,19 @@ msgctxt "field:employee.leave.payment,hours:"
 msgid "Hours"
 msgstr "Hores"
 
-msgctxt "field:employee.leave.payment,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:employee.leave.payment,period:"
 msgid "Period"
 msgstr "Període"
-
-msgctxt "field:employee.leave.payment,rec_name:"
-msgid "Name"
-msgstr "Nom"
 
 msgctxt "field:employee.leave.payment,type:"
 msgid "Type"
 msgstr "Tipus"
 
-msgctxt "field:employee.leave.payment,write_date:"
-msgid "Write Date"
-msgstr "Data modificació"
-
-msgctxt "field:employee.leave.payment,write_uid:"
-msgid "Write User"
-msgstr "Usuari modificació"
-
-msgctxt "field:employee.leave.period,create_date:"
-msgid "Create Date"
-msgstr "Data creació"
-
-msgctxt "field:employee.leave.period,create_uid:"
-msgid "Create User"
-msgstr "Usuari creació"
-
 msgctxt "field:employee.leave.period,end:"
 msgid "End"
 msgstr "Final"
 
-msgctxt "field:employee.leave.period,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:employee.leave.period,name:"
-msgid "Name"
-msgstr "Nom"
-
-msgctxt "field:employee.leave.period,rec_name:"
 msgid "Name"
 msgstr "Nom"
 
@@ -200,25 +106,9 @@ msgctxt "field:employee.leave.period,start:"
 msgid "Start"
 msgstr "Inici"
 
-msgctxt "field:employee.leave.period,write_date:"
-msgid "Write Date"
-msgstr "Data modificació"
-
-msgctxt "field:employee.leave.period,write_uid:"
-msgid "Write User"
-msgstr "Usuari modificació"
-
 msgctxt "field:employee.leave.summary,available:"
 msgid "Available"
 msgstr "Disponibles"
-
-msgctxt "field:employee.leave.summary,create_date:"
-msgid "Create Date"
-msgstr "Data creació"
-
-msgctxt "field:employee.leave.summary,create_uid:"
-msgid "Create User"
-msgstr "Usuari creació"
 
 msgctxt "field:employee.leave.summary,done:"
 msgid "Done"
@@ -232,10 +122,6 @@ msgctxt "field:employee.leave.summary,hours:"
 msgid "Hours"
 msgstr "Hores"
 
-msgctxt "field:employee.leave.summary,id:"
-msgid "ID"
-msgstr "ID"
-
 msgctxt "field:employee.leave.summary,paid:"
 msgid "Paid"
 msgstr "Pagada"
@@ -248,10 +134,6 @@ msgctxt "field:employee.leave.summary,period:"
 msgid "Period"
 msgstr "Període"
 
-msgctxt "field:employee.leave.summary,rec_name:"
-msgid "Name"
-msgstr "Nom"
-
 msgctxt "field:employee.leave.summary,scheduled:"
 msgid "Scheduled"
 msgstr "Programades"
@@ -260,41 +142,13 @@ msgctxt "field:employee.leave.summary,type:"
 msgid "Type"
 msgstr "Tipus"
 
-msgctxt "field:employee.leave.summary,write_date:"
-msgid "Write Date"
-msgstr "Data modificació"
-
-msgctxt "field:employee.leave.summary,write_uid:"
-msgid "Write User"
-msgstr "Usuari modificació"
-
-msgctxt "field:employee.leave.type,create_date:"
-msgid "Create Date"
-msgstr "Data creació"
-
-msgctxt "field:employee.leave.type,create_uid:"
-msgid "Create User"
-msgstr "Usuari creació"
-
-msgctxt "field:employee.leave.type,id:"
-msgid "ID"
-msgstr "ID"
+msgctxt "field:employee.leave.type,allow_right:"
+msgid "Allow Rigth"
+msgstr "Permetre"
 
 msgctxt "field:employee.leave.type,name:"
 msgid "Name"
 msgstr "Nom"
-
-msgctxt "field:employee.leave.type,rec_name:"
-msgid "Name"
-msgstr "Nom"
-
-msgctxt "field:employee.leave.type,write_date:"
-msgid "Write Date"
-msgstr "Data modificació"
-
-msgctxt "field:employee.leave.type,write_uid:"
-msgid "Write User"
-msgstr "Usuari modificació"
 
 msgctxt "help:employee.leave.entitlement,date:"
 msgid "The date when this entitlement has been deserved."
@@ -331,6 +185,10 @@ msgstr "Tipus d'absència d'empleat"
 msgctxt "model:ir.action,name:act_employee_leave"
 msgid "Employee Leave"
 msgstr "Absència d'empleat"
+
+msgctxt "model:ir.action,name:act_employee_leave_calendar"
+msgid "Employee Leaves"
+msgstr "Absències d'empleats"
 
 msgctxt "model:ir.action,name:act_employee_leave_entitlement"
 msgid "Employee Entitlement"
@@ -371,6 +229,44 @@ msgctxt ""
 msgid "Rejected"
 msgstr "Refusat"
 
+msgctxt "model:ir.message,text:exceeds_entitelments"
+msgid ""
+"The leave \"%(leave)s\" exceeds the available hours (%(hours)sh) for "
+"employee \"%(employee)s\" and entitlement type \"%(type)s\" on period "
+"\"%(period)s\"."
+msgstr ""
+"L'absència \"%(leave)s\" exedeix de les hores disponibles (%(hours)sh) per "
+"l'empleat \"%(employee)s\" i el tipus d'absència \"%(type)s\" en el període "
+"\"%(period)s\"."
+
+msgctxt "model:ir.model.button,string:leave_approve_button"
+msgid "Approve"
+msgstr "Aprova"
+
+msgctxt "model:ir.model.button,string:leave_cancel_button"
+msgid "Cancel"
+msgstr "Cancel·la"
+
+msgctxt "model:ir.model.button,string:leave_done_button"
+msgid "Done"
+msgstr "Realitzar"
+
+msgctxt "model:ir.model.button,string:leave_pending_button"
+msgid "Pending"
+msgstr "Pendent"
+
+msgctxt "model:ir.model.button,string:leave_reject_button"
+msgid "Reject"
+msgstr "Refusa"
+
+msgctxt "model:ir.rule.group,name:rule_group_leave"
+msgid "Employee Leave Employee Rule"
+msgstr "Regla absències d'empleat - empleat"
+
+msgctxt "model:ir.rule.group,name:rule_group_leave_admin"
+msgid "Employee Leave Admin Rule"
+msgstr "Regla absències d'empleat - administrador"
+
 msgctxt "model:ir.ui.menu,name:menu_admin"
 msgid "Administration"
 msgstr "Administració"
@@ -380,6 +276,10 @@ msgid "Configuration"
 msgstr "Configuració"
 
 msgctxt "model:ir.ui.menu,name:menu_employee_leave"
+msgid "Employee Leaves"
+msgstr "Absències d'empleats"
+
+msgctxt "model:ir.ui.menu,name:menu_employee_leave_calendar"
 msgid "Employee Leaves"
 msgstr "Absències d'empleats"
 
