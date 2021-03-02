@@ -3,6 +3,8 @@
      copyright notices and license terms. -->
 <data>
     <xpath expr="/form" position="inside">
+        <label name="leave_color"/>
+        <field name="leave_color"/>
         <field name="leave_summary" colspan="4"/>
     </xpath>
 </data>

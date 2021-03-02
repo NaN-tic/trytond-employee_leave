@@ -2,9 +2,21 @@
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
+msgctxt "field:company.employee,leave_color:"
+msgid "Leave Color"
+msgstr "Color ausencia"
+
 msgctxt "field:company.employee,leave_summary:"
 msgid "Leave Summary"
 msgstr "Resumen ausencias"
+
+msgctxt "field:employee.leave,calendar_background_color:"
+msgid "Background Color"
+msgstr "Background Color"
+
+msgctxt "field:employee.leave,calendar_color:"
+msgid "Color"
+msgstr "Color"
 
 msgctxt "field:employee.leave,comment:"
 msgid "Comment"
@@ -45,6 +57,26 @@ msgstr "Resumen"
 msgctxt "field:employee.leave,type:"
 msgid "Type"
 msgstr "Tipo"
+
+msgctxt "field:employee.leave.calendar.context,leave_color_type:"
+msgid "Use Leave Color"
+msgstr "Usar color ausencia"
+
+msgctxt "field:employee.leave.configuration,colors:"
+msgid "State Colors"
+msgstr "Estado colores"
+
+msgctxt "field:employee.leave.configuration.state.color,color:"
+msgid "Color"
+msgstr "Color"
+
+msgctxt "field:employee.leave.configuration.state.color,configuration:"
+msgid "Configuration"
+msgstr "Configuración"
+
+msgctxt "field:employee.leave.configuration.state.color,state:"
+msgid "State"
+msgstr "Estado"
 
 msgctxt "field:employee.leave.entitlement,comment:"
 msgid "Comment"
@@ -150,6 +182,16 @@ msgctxt "field:employee.leave.type,name:"
 msgid "Name"
 msgstr "Nombre"
 
+msgctxt "help:employee.leave.calendar.context,leave_color_type:"
+msgid ""
+"If checked, uses the color of the state of the leave as event background."
+msgstr ""
+"Si está marcado usar el color del estado de la ausencia como color de fondo."
+
+msgctxt "help:employee.leave.configuration.state.color,color:"
+msgid "HTML color (hexadecimal)"
+msgstr "HTML color (hexadecimal)"
+
 msgctxt "help:employee.leave.entitlement,date:"
 msgid "The date when this entitlement has been deserved."
 msgstr "Fecha en que se meritó este derecho."
@@ -161,6 +203,18 @@ msgstr "La fecha se concedió este pago."
 msgctxt "model:employee.leave,name:"
 msgid "Employee Leave"
 msgstr "Ausencia empleado"
+
+msgctxt "model:employee.leave.calendar.context,name:"
+msgid "Leave Calendar Context"
+msgstr "Calendario ausencia contexto"
+
+msgctxt "model:employee.leave.configuration,name:"
+msgid "Leave Configuration"
+msgstr "Configuración ausencia"
+
+msgctxt "model:employee.leave.configuration.state.color,name:"
+msgid "Leave Configuration State Color"
+msgstr "Colores estado configuración ausencia"
 
 msgctxt "model:employee.leave.entitlement,name:"
 msgid "Employee Leave Entitlement"
@@ -189,6 +243,10 @@ msgstr "Ausencia empleado"
 msgctxt "model:ir.action,name:act_employee_leave_calendar"
 msgid "Employee Leaves"
 msgstr "Ausencias empleado"
+
+msgctxt "model:ir.action,name:act_employee_leave_configuration"
+msgid "Configuration"
+msgstr "Configuración"
 
 msgctxt "model:ir.action,name:act_employee_leave_entitlement"
 msgid "Employee Entitlement"
@@ -286,6 +344,10 @@ msgstr "Ausencias empleado"
 msgctxt "model:ir.ui.menu,name:menu_employee_leave_calendar"
 msgid "Employee Leaves"
 msgstr "Ausencias empleado"
+
+msgctxt "model:ir.ui.menu,name:menu_employee_leave_configuration"
+msgid "Configuration"
+msgstr "Configuración"
 
 msgctxt "model:ir.ui.menu,name:menu_employee_leave_entitlement"
 msgid "Entitlements"

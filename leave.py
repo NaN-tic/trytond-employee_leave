@@ -13,7 +13,40 @@ from trytond.exceptions import UserWarning
 
 
 __all__ = ['Type', 'Period', 'Leave', 'Entitlement', 'Payment',
-    'Employee', 'EmployeeSummary']
+    'Employee', 'EmployeeSummary', 'LeaveCalendarContext']
+
+# Use Tryton's default color by default
+_COLOR = '#ABD6E3'
+_RGB = (67, 84, 90)
+
+
+class RGB:
+    def __init__(self, color=(0, 0, 0)):
+        if isinstance(color, str):
+            color = color.lstrip('#')
+            try:
+                self.value = tuple(int(color[i:i+2], 16) for i in (0, 2, 4))
+            except ValueError:
+                self.value = _RGB
+        else:
+            self.value = color
+        assert isinstance(self.value, tuple)
+        assert len(self.value) == 3
+
+    def hex(self):
+        return '#%02x%02x%02x' % self.value
+
+    def increase(self, inc):
+        res = []
+        for x in self.value:
+            res.append(max(0, min(255, x + inc)))
+        self.value = tuple(res)
+
+    def increase_ratio(self, ratio):
+        self.increase(int((255 - self.gray()) * ratio))
+
+    def gray(self):
+        return (self.value[0] + self.value[1] + self.value[2]) // 3
 
 
 class Type(ModelSQL, ModelView):
@@ -71,6 +104,9 @@ class Leave(Workflow, ModelSQL, ModelView):
             ('rejected', 'Rejected'),
             ('done', 'Done'),
             ], 'State', required=True, readonly=True)
+    calendar_color = fields.Function(fields.Char('Color'), 'get_calendar_color')
+    calendar_background_color = fields.Function(fields.Char('Background Color'),
+            'get_calendar_background_color')
 
     @classmethod
     def __setup__(cls):
@@ -238,6 +274,31 @@ class Leave(Workflow, ModelSQL, ModelView):
 
     def get_summary(self, name):
         return ' - '.join([self.type.rec_name, self.employee.rec_name])
+
+    def get_calendar_color(self, name):
+        rgb = RGB(self.calendar_background_color)
+        if rgb.gray() > 128:
+            return 'black'
+        return 'white'
+
+    def get_calendar_background_color(self, name):
+        Config = Pool().get('employee.leave.configuration')
+
+        config = Config(1)
+        colors = dict((c.state, c.color) for c in config.colors)
+
+        color = _COLOR
+        context = Transaction().context
+        if context.get('leave_color_type', False):
+            color = colors.get(self.state, _COLOR)
+        else:
+            if self.employee and self.employee.leave_color:
+                color = self.employee.leave_color
+
+        rgb = RGB(color)
+        rgb.increase_ratio(0.8)
+        color = rgb.hex()
+        return color
 
 
 class Entitlement(ModelSQL, ModelView):
@@ -413,3 +474,14 @@ class EmployeeSummary(ModelSQL, ModelView):
             payments.hours.cast(cls.paid.sql_type().base).as_('paid'),
             where=(type_.id.in_(leave_types)))
         return query
+
+
+class LeaveCalendarContext(ModelView):
+    'Leave Calendar Context'
+    __name__ = 'employee.leave.calendar.context'
+    leave_color_type = fields.Boolean('Use Leave Color', help='If checked, '
+        'uses the color of the state of the leave as event background.')
+
+    @staticmethod
+    def default_leave_color_type():
+        return True
