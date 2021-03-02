@@ -423,12 +423,6 @@
             <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="True"/>
         </record>
-        <record model="ir.ui.view" id="employee_view_form">
-            <field name="model">company.employee</field>
-            <field name="type" eval="None"/>
-            <field name="inherit" ref="company.employee_view_form"/>
-            <field name="name">employee_form</field>
-        </record>
 
         <!-- Menus -->
         <menuitem id="menu_employee_leave" name="Employee Leaves" sequence="1" />
@@ -471,6 +465,13 @@
         <menuitem action="act_employee_leave" id="menu_employee_leave_leave"
                 parent="menu_employee_leave" sequence="50" name="Leaves"/>
 
+        <!-- activity.calendar.context -->
+        <record model="ir.ui.view" id="employee_leave_calendar_context_form_view">
+            <field name="model">employee.leave.calendar.context</field>
+            <field name="type">form</field>
+            <field name="name">employee_leave_calendar_context_form</field>
+        </record>
+
         <!-- employee.leave calendar -->
         <record model="ir.ui.view" id="employee_leave_calendar_view_calendar">
             <field name="model">employee.leave</field>
@@ -481,7 +482,7 @@
         <record model="ir.action.act_window" id="act_employee_leave_calendar">
             <field name="name">Employee Leaves</field>
             <field name="res_model">employee.leave</field>
-            <!-- <field name="context_model">employee_leave.calendar.context</field> -->
+            <field name="context_model">employee.leave.calendar.context</field>
             <field name="search_value" eval="[('employee', '=', Eval('context', {}).get('employee.rec_name', '%'))]" pyson="1"/>
         </record>
         <record model="ir.action.act_window.view" id="act_employee_leave_calendar_calendar">
