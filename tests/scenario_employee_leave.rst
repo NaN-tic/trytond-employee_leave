@@ -56,8 +56,10 @@ Create leave admin user::
     >>> leave_admin_user.login = 'leave_admin'
     >>> leave_admin_user.main_company = company
     >>> leave_admin_group, = Group.find([
-    ...     ('name', '=', 'Employee Leave Administration')])
+    ...     ('name', '=', 'Employee Leave Administration'),
+    ...     ])
     >>> leave_admin_user.groups.append(leave_admin_group)
+    >>> leave_admin_user.groups.append(Group(leave_group.id))
     >>> leave_admin_user.language = english
     >>> leave_admin_user.save()
     >>> set_user(leave_admin_user)
