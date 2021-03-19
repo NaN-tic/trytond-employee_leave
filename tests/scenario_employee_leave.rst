@@ -40,7 +40,6 @@ Create leave user::
     >>> leave_user = User()
     >>> leave_user.name = 'Employee Leave'
     >>> leave_user.login = 'leave'
-    >>> leave_user.main_company = company
     >>> leave_group, = Group.find([('name', '=', 'Employee Leave')])
     >>> leave_user.groups.append(leave_group)
     >>> leave_user.employees.append(employee)
@@ -54,7 +53,6 @@ Create leave admin user::
     >>> leave_admin_user = User()
     >>> leave_admin_user.name = 'Leave Admin'
     >>> leave_admin_user.login = 'leave_admin'
-    >>> leave_admin_user.main_company = company
     >>> leave_admin_group, = Group.find([
     ...     ('name', '=', 'Employee Leave Administration'),
     ...     ])
