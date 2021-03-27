@@ -1,13 +1,9 @@
 # The COPYRIGHT file at the top level of this repository contains the full
 # copyright notices and license terms.
-from trytond import backend
 from trytond.model import ModelSingleton, ModelSQL, ModelView, fields
 from trytond.pool import Pool
-from trytond.pyson import Eval
-from trytond.modules.company.model import (
-    CompanyMultiValueMixin, CompanyValueMixin)
+from trytond.modules.company.model import CompanyMultiValueMixin
 
-__all__ = ['Configuration', 'ConfigurationStateColor']
 
 def get_leave_states(field_name):
     @classmethod
