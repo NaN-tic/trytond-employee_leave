@@ -285,7 +285,7 @@ msgstr "Pendiente"
 msgctxt ""
 "model:ir.action.act_window.domain,name:act_employee_leave_domain_rejected"
 msgid "Rejected"
-msgstr "Refusado"
+msgstr "Denegado"
 
 msgctxt "model:ir.message,text:exceeds_entitelments"
 msgid ""
@@ -399,7 +399,7 @@ msgstr "Pendiente"
 
 msgctxt "selection:employee.leave,state:"
 msgid "Rejected"
-msgstr "Refusado"
+msgstr "Denegado"
 
 msgctxt "view:employee.leave.entitlement:"
 msgid "Employee Entitlement"
