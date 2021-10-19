@@ -417,7 +417,7 @@
         </record>
 
         <!-- Menus -->
-        <menuitem id="menu_employee_leave" name="Employee Leaves" sequence="1" />
+        <menuitem id="menu_employee_leave" name="Employee Leaves" sequence="100" />
         <menuitem id="menu_config" name="Configuration" sequence="10"
             parent="menu_employee_leave"/>
         <menuitem id="menu_admin" name="Administration" sequence="20"
