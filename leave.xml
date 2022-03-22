@@ -177,7 +177,7 @@
          </record>
          <record model="ir.rule" id="rule_invoice_line1">
              <field name="domain"
-                 eval="[('employee.company', '=', Eval('user', {}).get('company', None))]"
+                 eval="[('employee.company', 'in', Eval('companies', []))]"
                  pyson="1"/>
              <field name="rule_group" ref="rule_group_invoice_line"/>
          </record>
@@ -196,7 +196,7 @@
         <record model="ir.action.act_window" id="act_employee_leave_entitlement">
             <field name="name">Employee Entitlement</field>
             <field name="domain"
-                eval="[('employee.company', '=', Eval('context', {}).get('company', -1))]"
+                eval="[('employee.company', 'in', Eval('companies', []))]"
                 pyson="1"/>
             <field name="res_model">employee.leave.entitlement</field>
         </record>
@@ -342,7 +342,7 @@
         <record model="ir.action.act_window" id="act_employee_leave_summary">
             <field name="name">Employee Leave Summary</field>
             <field name="domain"
-                eval="[('employee.company', '=', Eval('context', {}).get('company', -1))]"
+                eval="[('employee.company', 'in', Eval('companies', []))]"
                 pyson="1"/>
             <field name="res_model">employee.leave.summary</field>
         </record>
