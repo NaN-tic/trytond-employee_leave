@@ -195,9 +195,6 @@
         </record>
         <record model="ir.action.act_window" id="act_employee_leave_entitlement">
             <field name="name">Employee Entitlement</field>
-            <field name="domain"
-                eval="[('employee.company', 'in', Eval('companies', []))]"
-                pyson="1"/>
             <field name="res_model">employee.leave.entitlement</field>
         </record>
         <record model="ir.action.act_window.view" id="act_employee_leave_entitlement_view1">
@@ -234,6 +231,18 @@
             <field name="perm_create" eval="True"/>
             <field name="perm_delete" eval="True"/>
         </record>
+
+        <record model="ir.rule.group" id="rule_group_employee_leave_entitlement">
+             <field name="name">User in company</field>
+             <field name="model" search="[('model', '=', 'employee.leave.entitlement')]"/>
+             <field name="global_p" eval="True"/>
+         </record>
+         <record model="ir.rule" id="rule_employee_leave_entitlement1">
+             <field name="domain"
+                 eval="[('employee.company', 'in', Eval('companies', []))]"
+                 pyson="1"/>
+             <field name="rule_group" ref="rule_group_employee_leave_entitlement"/>
+         </record>
 
         <!-- employee.leave.payment -->
         <record model="ir.ui.view" id="employee_leave_payment_view_form">
