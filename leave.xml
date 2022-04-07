@@ -341,9 +341,6 @@
         </record>
         <record model="ir.action.act_window" id="act_employee_leave_summary">
             <field name="name">Employee Leave Summary</field>
-            <field name="domain"
-                eval="[('employee.company', 'in', Eval('companies', []))]"
-                pyson="1"/>
             <field name="res_model">employee.leave.summary</field>
         </record>
         <record model="ir.action.act_window.view" id="act_employee_leave_summary_view1">
