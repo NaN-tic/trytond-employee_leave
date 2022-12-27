@@ -53,7 +53,7 @@ class Type(ModelSQL, ModelView):
     'Employee Leave Type'
     __name__ = 'employee.leave.type'
     name = fields.Char('Name', required=True)
-    allow_right = fields.Boolean('Allow Rigth')
+    allow_right = fields.Boolean('Allow Right')
 
     @staticmethod
     def default_allow_right():
