@@ -175,7 +175,7 @@ msgid "Type"
 msgstr "Tipo"
 
 msgctxt "field:employee.leave.type,allow_right:"
-msgid "Allow Rigth"
+msgid "Allow Right"
 msgstr "Permitir"
 
 msgctxt "field:employee.leave.type,name:"
