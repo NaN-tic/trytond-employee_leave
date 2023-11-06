@@ -3,6 +3,7 @@
 from trytond.pool import Pool
 from . import configuration
 from . import employee
+from . import ir
 from . import leave
 
 
@@ -11,6 +12,7 @@ def register():
         configuration.Configuration,
         configuration.ConfigurationStateColor,
         employee.Employee,
+        ir.Rule,
         leave.Type,
         leave.Period,
         leave.Leave,

@@ -153,9 +153,12 @@
             <field name="model" search="[('model', '=', 'employee.leave')]"/>
             <field name="global_p" eval="False"/>
             <field name="default_p" eval="True"/>
+            <field name="perm_read" eval="False"/>
         </record>
         <record model="ir.rule" id="rule_leave1">
-            <field name="domain" eval="[('employee', '=', Eval('user', {}).get('employee', -1))]" pyson="1"/>
+            <field name="domain"
+                eval="[('employee', 'in', Eval('employees', []))]"
+                pyson="1"/>
             <field name="rule_group" ref="rule_group_leave"/>
         </record>
         <record model="ir.rule.group" id="rule_group_leave_admin">
