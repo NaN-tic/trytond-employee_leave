@@ -12,9 +12,6 @@ from trytond.i18n import gettext
 from trytond.exceptions import UserWarning
 
 
-__all__ = ['Type', 'Period', 'Leave', 'Entitlement', 'Payment',
-    'Employee', 'EmployeeSummary', 'LeaveCalendarContext']
-
 # Use Tryton's default color by default
 _COLOR = '#ABD6E3'
 _RGB = (67, 84, 90)
