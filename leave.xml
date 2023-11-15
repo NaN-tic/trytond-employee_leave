@@ -32,6 +32,7 @@
         <record model="ir.action.act_window" id="act_employee_leave">
             <field name="name">Employee Leave</field>
             <field name="res_model">employee.leave</field>
+            <field name="domain" eval="[('employee.active', '=', True)]" pyson="1"/>
         </record>
         <record model="ir.action.act_window.view" id="act_employee_leave_view1">
             <field name="sequence" eval="10"/>
@@ -351,6 +352,7 @@
         <record model="ir.action.act_window" id="act_employee_leave_summary">
             <field name="name">Employee Leave Summary</field>
             <field name="res_model">employee.leave.summary</field>
+            <field name="domain" eval="[('employee.active', '=', True)]" pyson="1"/>
         </record>
         <record model="ir.action.act_window.view" id="act_employee_leave_summary_view1">
             <field name="sequence" eval="10"/>
@@ -481,6 +483,7 @@
             <field name="name">Employee Leaves</field>
             <field name="res_model">employee.leave</field>
             <field name="context_model">employee.leave.calendar.context</field>
+            <field name="domain" eval="[('employee.active', '=', True)]" pyson="1"/>
             <field name="search_value" eval="[('employee', '=', Eval('context', {}).get('employee.rec_name', '%'))]" pyson="1"/>
         </record>
         <record model="ir.action.act_window.view" id="act_employee_leave_calendar_calendar">
