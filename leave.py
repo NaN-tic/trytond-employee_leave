@@ -67,7 +67,7 @@ class Period(ModelSQL, ModelView):
     start = fields.Date('Start', required=True)
     end = fields.Date('End', required=True, domain=[
             ('end', '>=', Eval('start')),
-            ], depends=['start'])
+            ])
 
 
 _STATES = {
