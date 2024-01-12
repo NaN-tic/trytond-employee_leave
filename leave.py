@@ -81,21 +81,18 @@ class Leave(Workflow, ModelSQL, ModelView):
     __name__ = 'employee.leave'
     employee = fields.Many2One('company.employee', 'Employee', required=True,
         domain=[('company', '=', Eval('context', {}).get('company', -1)),],
-        states=_STATES, depends=_DEPENDS)
+        states=_STATES)
     period = fields.Many2One('employee.leave.period', 'Period', required=True,
-        states=_STATES, depends=_DEPENDS)
+        states=_STATES)
     type = fields.Many2One('employee.leave.type', 'Type', required=True,
-        states=_STATES, depends=_DEPENDS)
-    request_date = fields.Date('Request Date', required=True, states=_STATES,
-        depends=_DEPENDS)
-    start = fields.Date('Start', required=True, states=_STATES,
-        depends=_DEPENDS)
+        states=_STATES)
+    request_date = fields.Date('Request Date', required=True, states=_STATES)
+    start = fields.Date('Start', required=True, states=_STATES)
     end = fields.Date('End', required=True, domain=[
             ('end', '>=', Eval('start')),
-            ], states=_STATES, depends=_DEPENDS + ['start'])
-    hours = fields.Numeric('Hours to consume', required=True, states=_STATES,
-        depends=_DEPENDS)
-    comment = fields.Text('Comment', states=_STATES, depends=_DEPENDS)
+            ], states=_STATES)
+    hours = fields.Numeric('Hours to consume', required=True, states=_STATES)
+    comment = fields.Text('Comment', states=_STATES)
     summary = fields.Function(fields.Char('Summary'), 'get_summary')
     state = fields.Selection([
             ('pending', 'Pending'),
