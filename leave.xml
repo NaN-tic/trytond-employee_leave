@@ -72,14 +72,14 @@
         </record>
 
         <record model="ir.model.access" id="access_employee_leave">
-            <field name="model" search="[('model', '=', 'employee.leave')]"/>
+            <field name="model">employee.leave</field>
             <field name="perm_read" eval="False"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
         <record model="ir.model.access" id="access_employee_leave_leave">
-            <field name="model" search="[('model', '=', 'employee.leave')]"/>
+            <field name="model">employee.leave</field>
             <field name="group" ref="group_employee_leave"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
@@ -87,7 +87,7 @@
             <field name="perm_delete" eval="False"/>
         </record>
         <record model="ir.model.access" id="access_employee_leave_admin">
-            <field name="model" search="[('model', '=', 'employee.leave')]"/>
+            <field name="model">employee.leave</field>
             <field name="group" ref="group_employee_leave_admin"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
@@ -98,7 +98,7 @@
         <record model="ir.model.button" id="leave_approve_button">
             <field name="name">approve</field>
             <field name="string">Approve</field>
-            <field name="model" search="[('model', '=', 'employee.leave')]"/>
+            <field name="model">employee.leave</field>
         </record>
         <record model="ir.model.button-res.group"
                 id="leave_approve_button_group_admin">
@@ -108,7 +108,7 @@
         <record model="ir.model.button" id="leave_cancel_button">
             <field name="name">cancel</field>
             <field name="string">Cancel</field>
-            <field name="model" search="[('model', '=', 'employee.leave')]"/>
+            <field name="model">employee.leave</field>
         </record>
         <record model="ir.model.button-res.group"
                 id="leave_cancel_button_group_admin">
@@ -118,7 +118,7 @@
         <record model="ir.model.button" id="leave_done_button">
             <field name="name">done</field>
             <field name="string">Done</field>
-            <field name="model" search="[('model', '=', 'employee.leave')]"/>
+            <field name="model">employee.leave</field>
         </record>
 
         <record model="ir.model.button-res.group"
@@ -130,7 +130,7 @@
         <record model="ir.model.button" id="leave_pending_button">
             <field name="name">pending</field>
             <field name="string">Pending</field>
-            <field name="model" search="[('model', '=', 'employee.leave')]"/>
+            <field name="model">employee.leave</field>
         </record>
         <record model="ir.model.button-res.group"
                 id="leave_pending_button_group_admin">
@@ -141,7 +141,7 @@
         <record model="ir.model.button" id="leave_reject_button">
             <field name="name">reject</field>
             <field name="string">Reject</field>
-            <field name="model" search="[('model', '=', 'employee.leave')]"/>
+            <field name="model">employee.leave</field>
         </record>
         <record model="ir.model.button-res.group"
                 id="leave_reject_button_group_admin">
@@ -150,7 +150,7 @@
         </record>
         <record model="ir.rule.group" id="rule_group_leave">
             <field name="name">Employee Leave Employee Rule</field>
-            <field name="model" search="[('model', '=', 'employee.leave')]"/>
+            <field name="model">employee.leave</field>
             <field name="global_p" eval="False"/>
             <field name="default_p" eval="True"/>
             <field name="perm_read" eval="False"/>
@@ -163,7 +163,7 @@
         </record>
         <record model="ir.rule.group" id="rule_group_leave_admin">
             <field name="name">Employee Leave Admin Rule</field>
-            <field name="model" search="[('model', '=', 'employee.leave')]"/>
+            <field name="model">employee.leave</field>
             <field name="global_p" eval="False"/>
             <field name="default_p" eval="False"/>
         </record>
@@ -175,7 +175,7 @@
 
         <record model="ir.rule.group" id="rule_group_invoice_line">
              <field name="name">User in company</field>
-             <field name="model" search="[('model', '=', 'employee.leave')]"/>
+             <field name="model">employee.leave</field>
              <field name="global_p" eval="True"/>
          </record>
          <record model="ir.rule" id="rule_invoice_line1">
@@ -212,14 +212,14 @@
         </record>
 
         <record model="ir.model.access" id="access_employee_leave_entitlement">
-            <field name="model" search="[('model', '=', 'employee.leave.entitlement')]"/>
+            <field name="model">employee.leave.entitlement</field>
             <field name="perm_read" eval="False"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
         <record model="ir.model.access" id="access_employee_leave_entitlement_leave">
-            <field name="model" search="[('model', '=', 'employee.leave.entitlement')]"/>
+            <field name="model">employee.leave.entitlement</field>
             <field name="group" ref="group_employee_leave"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
@@ -227,7 +227,7 @@
             <field name="perm_delete" eval="False"/>
         </record>
         <record model="ir.model.access" id="access_employee_leave_entitlement_admin">
-            <field name="model" search="[('model', '=', 'employee.leave.entitlement')]"/>
+            <field name="model">employee.leave.entitlement</field>
             <field name="group" ref="group_employee_leave_admin"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
@@ -237,7 +237,7 @@
 
         <record model="ir.rule.group" id="rule_group_employee_leave_entitlement">
              <field name="name">User in company</field>
-             <field name="model" search="[('model', '=', 'employee.leave.entitlement')]"/>
+             <field name="model">employee.leave.entitlement</field>
              <field name="global_p" eval="True"/>
          </record>
          <record model="ir.rule" id="rule_employee_leave_entitlement1">
@@ -273,14 +273,14 @@
             <field name="act_window" ref="act_employee_leave_payment"/>
         </record>
         <record model="ir.model.access" id="access_employee_leave_payment">
-            <field name="model" search="[('model', '=', 'employee.leave.payment')]"/>
+            <field name="model">employee.leave.payment</field>
             <field name="perm_read" eval="False"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
         <record model="ir.model.access" id="access_employee_leave_payment_leave">
-            <field name="model" search="[('model', '=', 'employee.leave.payment')]"/>
+            <field name="model">employee.leave.payment</field>
             <field name="group" ref="group_employee_leave"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
@@ -288,7 +288,7 @@
             <field name="perm_delete" eval="False"/>
         </record>
         <record model="ir.model.access" id="access_employee_leave_payment_admin">
-            <field name="model" search="[('model', '=', 'employee.leave.payment')]"/>
+            <field name="model">employee.leave.payment</field>
             <field name="group" ref="group_employee_leave_admin"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
@@ -322,14 +322,14 @@
             <field name="act_window" ref="act_employee_leave_period"/>
         </record>
         <record model="ir.model.access" id="access_employee_leave_period">
-            <field name="model" search="[('model', '=', 'employee.leave.period')]"/>
+            <field name="model">employee.leave.period</field>
             <field name="perm_read" eval="False"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
         <record model="ir.model.access" id="access_employee_leave_period_leave">
-            <field name="model" search="[('model', '=', 'employee.leave.period')]"/>
+            <field name="model">employee.leave.period</field>
             <field name="group" ref="group_employee_leave"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
@@ -337,7 +337,7 @@
             <field name="perm_delete" eval="False"/>
         </record>
         <record model="ir.model.access" id="access_employee_leave_period_admin">
-            <field name="model" search="[('model', '=', 'employee.leave.period')]"/>
+            <field name="model">employee.leave.period</field>
             <field name="group" ref="group_employee_leave_admin"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
@@ -361,14 +361,14 @@
             <field name="act_window" ref="act_employee_leave_summary"/>
         </record>
         <record model="ir.model.access" id="access_employee_leave_summary">
-            <field name="model" search="[('model', '=', 'employee.leave.summary')]"/>
+            <field name="model">employee.leave.summary</field>
             <field name="perm_read" eval="False"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
         <record model="ir.model.access" id="access_employee_leave_summary_leave">
-            <field name="model" search="[('model', '=', 'employee.leave.summary')]"/>
+            <field name="model">employee.leave.summary</field>
             <field name="group" ref="group_employee_leave"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
@@ -402,14 +402,14 @@
             <field name="act_window" ref="act_employee_leave_type"/>
         </record>
         <record model="ir.model.access" id="access_employee_leave_type">
-            <field name="model" search="[('model', '=', 'employee.leave.type')]"/>
+            <field name="model">employee.leave.type</field>
             <field name="perm_read" eval="False"/>
             <field name="perm_write" eval="False"/>
             <field name="perm_create" eval="False"/>
             <field name="perm_delete" eval="False"/>
         </record>
         <record model="ir.model.access" id="access_employee_leave_type_leave">
-            <field name="model" search="[('model', '=', 'employee.leave.type')]"/>
+            <field name="model">employee.leave.type</field>
             <field name="group" ref="group_employee_leave"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
@@ -417,7 +417,7 @@
             <field name="perm_delete" eval="False"/>
         </record>
         <record model="ir.model.access" id="access_employee_leave_type_admin">
-            <field name="model" search="[('model', '=', 'employee.leave.type')]"/>
+            <field name="model">employee.leave.type</field>
             <field name="group" ref="group_employee_leave_admin"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
