@@ -2,6 +2,5 @@
 <!--The COPYRIGHT file at the top level of this repository
 contains the full copyright notices and license terms. -->
 <form>
-    <separator name="colors" colspan="4"/>
     <field name="colors" colspan="4"/>
 </form>
