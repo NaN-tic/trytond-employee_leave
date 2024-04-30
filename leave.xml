@@ -443,12 +443,12 @@
             <field name="group" ref="group_employee_leave_admin"/>
           </record>
 
-        <menuitem action="act_employee_leave_period"
-            id="menu_employee_leave_period" parent="menu_config"
-            sequence="1" name="Leave Periods"/>
         <menuitem action="act_employee_leave_type"
             id="menu_employee_leave_type" parent="menu_config"
-            sequence="1" name="Leave Types"/>
+            sequence="20" name="Leave Types"/>
+        <menuitem action="act_employee_leave_period"
+            id="menu_employee_leave_period" parent="menu_config"
+            sequence="30" name="Leave Periods"/>
 
         <menuitem action="act_employee_leave_entitlement"
             id="menu_employee_leave_entitlement" parent="menu_admin"
