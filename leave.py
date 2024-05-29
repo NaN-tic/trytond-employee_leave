@@ -254,7 +254,7 @@ class Leave(Workflow, ModelSQL, ModelView):
     def get_leave_hours(cls, employee, period_start, period_end, type_=None,
             states=None):
         'Finds the number of hours that fit inside a period'
-        count = Decimal('0.0')
+        count = Decimal(0)
         for leave in cls.get_leaves(employee, period_start, period_end,
                 type_=type_, states=states):
             count += leave.compute_leave_hours(period_start, period_end)
@@ -350,10 +350,10 @@ class EmployeeSummary(ModelSQL, ModelView):
     def get_available(self, name):
         if self.hours is None:
             return
-        return ((self.hours or Decimal('0.0'))
-            - (self.scheduled or Decimal('0.0'))
-            - (self.done or Decimal('0.0'))
-            - (self.paid or Decimal('0.0')))
+        return ((self.hours or Decimal(0))
+            - (self.scheduled or Decimal(0))
+            - (self.done or Decimal(0))
+            - (self.paid or Decimal(0)))
 
     @classmethod
     def table_query(cls):
