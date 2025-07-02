@@ -34,6 +34,10 @@ msgctxt "field:employee.leave,hours:"
 msgid "Hours to consume"
 msgstr "Horas a consumir"
 
+msgctxt "field:employee.leave,mine:"
+msgid "Mine"
+msgstr "Las mías"
+
 msgctxt "field:employee.leave,period:"
 msgid "Period"
 msgstr "Período"
@@ -182,6 +186,10 @@ msgctxt "field:employee.leave.type,name:"
 msgid "Name"
 msgstr "Nombre"
 
+msgctxt "help:employee.leave,mine:"
+msgid "Mine employee leaves"
+msgstr "Mis ausencias"
+
 msgctxt "help:employee.leave.calendar.context,leave_color_type:"
 msgid ""
 "If checked, uses the color of the state of the leave as event background."
@@ -316,6 +324,11 @@ msgstr "Pendiente"
 msgctxt "model:ir.model.button,string:leave_reject_button"
 msgid "Reject"
 msgstr "Refusar"
+
+#, fuzzy
+msgctxt "model:ir.rule.group,name:rule_group_employee_leave_entitlement"
+msgid "User in company"
+msgstr "Usuario en la empresa"
 
 msgctxt "model:ir.rule.group,name:rule_group_invoice_line"
 msgid "User in company"

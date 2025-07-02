@@ -11,10 +11,6 @@ from trytond.transaction import Transaction
 from trytond.i18n import gettext
 from trytond.exceptions import UserWarning
 
-
-__all__ = ['Type', 'Period', 'Leave', 'Entitlement', 'Payment',
-    'Employee', 'EmployeeSummary', 'LeaveCalendarContext']
-
 # Use Tryton's default color by default
 _COLOR = '#ABD6E3'
 _RGB = (67, 84, 90)
@@ -104,6 +100,8 @@ class Leave(Workflow, ModelSQL, ModelView):
     calendar_color = fields.Function(fields.Char('Color'), 'get_calendar_color')
     calendar_background_color = fields.Function(fields.Char('Background Color'),
             'get_calendar_background_color')
+    mine = fields.Function(fields.Boolean('Mine', help='Mine employee leaves'),
+        'on_change_with_mine', searcher='search_mine')
 
     @classmethod
     def __setup__(cls):
@@ -296,6 +294,23 @@ class Leave(Workflow, ModelSQL, ModelView):
         rgb.increase_ratio(0.8)
         color = rgb.hex()
         return color
+
+    @fields.depends('employee')
+    def on_change_with_mine(self, name=None):
+        employee_id = Transaction().context.get('employee', -1)
+        if (employee_id == (self.employee and self.employee.id)):
+            return True
+        return False
+
+    @classmethod
+    def search_mine(cls, name, clause):
+        employee_id = Transaction().context.get('employee', -1)
+
+        _, operator, value = clause
+        if value == False:
+            operator = '!=' if operator == '=' else '='
+
+        return [('employee', operator, employee_id)]
 
 
 class Entitlement(ModelSQL, ModelView):
