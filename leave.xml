@@ -484,7 +484,7 @@
             <field name="name">Employee Leaves</field>
             <field name="res_model">employee.leave</field>
             <field name="context_model">employee.leave.calendar.context</field>
-            <field name="search_value" eval="[('employee', '=', Eval('context', {}).get('employee.rec_name', '%'))]" pyson="1"/>
+            <field name="search_value" eval="[('mine', '=', True)]" pyson="1"/>
         </record>
         <record model="ir.action.act_window.view" id="act_employee_leave_calendar_calendar">
             <field name="sequence" eval="10"/>
