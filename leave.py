@@ -100,7 +100,7 @@ class Leave(Workflow, ModelSQL, ModelView):
     calendar_color = fields.Function(fields.Char('Color'), 'get_calendar_color')
     calendar_background_color = fields.Function(fields.Char('Background Color'),
             'get_calendar_background_color')
-    mine = fields.Function(fields.Boolean('Mine', help='Mine employee leaves'),
+    mine = fields.Function(fields.Boolean('Mine', help='My employee leaves.'),
         'on_change_with_mine', searcher='search_mine')
 
     @classmethod

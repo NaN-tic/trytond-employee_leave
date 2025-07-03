@@ -187,8 +187,8 @@ msgid "Name"
 msgstr "Nom"
 
 msgctxt "help:employee.leave,mine:"
-msgid "Mine employee leaves"
-msgstr "Les meves absències"
+msgid "My employee leaves."
+msgstr "Les meves absències."
 
 msgctxt "help:employee.leave.calendar.context,leave_color_type:"
 msgid ""
