@@ -40,6 +40,10 @@ class Test(unittest.TestCase):
         employee.party = party
         employee.company = company
         employee.save()
+        employee2 = Employee()
+        employee2.party = party
+        employee2.company = company
+        employee2.save()
 
         # Create leave user
         User = Model.get('res.user')
@@ -190,3 +194,20 @@ class Test(unittest.TestCase):
 
         with self.assertRaises(UserWarning):
             unavailable_leave.click('approve')
+
+        employee2_leave = Leave()
+        employee2_leave.employee = employee2
+        employee2_leave.period = period
+        employee2_leave.type = holidays
+        employee2_leave.start = datetime.date(2015, 8, 1)
+        employee2_leave.end = datetime.date(2015, 8, 5)
+        employee2_leave.hours = Decimal(40)
+        employee2_leave.save()
+
+        set_user(leave_user)
+
+        self.assertEqual(len(Leave.find([])), 6)
+        self.assertEqual(len(Leave.find([('mine', '=', True)])), 5)
+        self.assertEqual(len(Leave.find([('mine', '=', False)])), 1)
+        self.assertEqual(len(Leave.find([('mine', '!=', True)])), 1)
+        self.assertEqual(len(Leave.find([('mine', '!=', False)])), 5)
