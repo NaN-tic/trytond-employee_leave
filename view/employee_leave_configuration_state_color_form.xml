@@ -5,5 +5,5 @@
     <label name="state"/>
     <field name="state"/>
     <label name="color"/>
-    <field name="color"/>
+    <field name="color" widget="color"/>
 </form>
