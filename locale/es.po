@@ -325,7 +325,6 @@ msgctxt "model:ir.model.button,string:leave_reject_button"
 msgid "Reject"
 msgstr "Refusar"
 
-#, fuzzy
 msgctxt "model:ir.rule.group,name:rule_group_employee_leave_entitlement"
 msgid "User in company"
 msgstr "Usuario en la empresa"
