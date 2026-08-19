@@ -426,11 +426,10 @@
         </record>
 
         <!-- Menus -->
-        <menuitem id="menu_employee_leave" name="Employee Leaves" sequence="100" />
-        <menuitem id="menu_config" name="Configuration" sequence="10"
-            parent="menu_employee_leave"/>
+        <menuitem id="menu_employee_leave" name="Employee Leaves" sequence="100"
+            parent="working_shift.menu_working_shift"/>
         <menuitem id="menu_admin" name="Administration" sequence="20"
-            parent="menu_employee_leave"/>
+            parent="working_shift.menu_working_shift"/>
 
           <record model="ir.ui.menu-res.group" id="menu_employee_leave_group_employee_leave">
             <field name="menu" ref="menu_employee_leave"/>
@@ -441,16 +440,11 @@
             <field name="menu" ref="menu_admin"/>
             <field name="group" ref="group_employee_leave_admin"/>
           </record>
-          <record model="ir.ui.menu-res.group" id="menu_config_group_employee_leave_admin">
-            <field name="menu" ref="menu_config"/>
-            <field name="group" ref="group_employee_leave_admin"/>
-          </record>
-
         <menuitem action="act_employee_leave_type"
-            id="menu_employee_leave_type" parent="menu_config"
+            id="menu_employee_leave_type" parent="working_shift.menu_configuration"
             sequence="20" name="Leave Types"/>
         <menuitem action="act_employee_leave_period"
-            id="menu_employee_leave_period" parent="menu_config"
+            id="menu_employee_leave_period" parent="working_shift.menu_configuration"
             sequence="30" name="Leave Periods"/>
 
         <menuitem action="act_employee_leave_entitlement"
