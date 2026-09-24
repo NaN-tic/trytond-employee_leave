@@ -6,16 +6,8 @@
         <record model="res.group" id="group_employee_leave_admin">
             <field name="name">Employee Leave Administration</field>
         </record>
-        <record model="res.user-res.group" id="user_admin_group_employee_leave_admin">
-            <field name="user" ref="res.user_admin"/>
-            <field name="group" ref="group_employee_leave_admin"/>
-        </record>
         <record model="res.group" id="group_employee_leave">
             <field name="name">Employee Leave</field>
-        </record>
-        <record model="res.user-res.group" id="user_admin_group_employee_leave">
-            <field name="user" ref="res.user_admin"/>
-            <field name="group" ref="group_employee_leave"/>
         </record>
 
         <!-- employee.leave -->
